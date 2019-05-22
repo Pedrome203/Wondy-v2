@@ -1,0 +1,143 @@
+ul{
+  list-style-type: none;
+}
+.contenedor {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 5%;
+  padding-right: 5%;
+   align-items: baseline;
+   background-color: white;
+  /* grid-template-columns: auto auto;
+  grid-column-gap: 50%;
+  justify-items: center;
+  margin-top: 1%;
+  margin-bottom: 1%; */
+}
+.logo{
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+.infor ul {
+  margin-top: 1rem;
+  list-style: none;
+}
+.infor ul li {
+  display: inline;
+  margin-left: .8rem;
+  margin-right: .8rem;
+}
+.nabar {
+  background-color:#333;
+  color: #ffffff;
+  min-height: 60px;
+}
+.nav-link {
+  color: #ffffff;
+  font-size: 1.1rem;
+  padding-left: .6rem;
+  padding-left: .6rem;
+}
+.navbar-brand {
+  color:#ffffff;
+}
+
+.infor{
+  width: 10%;
+}
+.infor a{
+  margin-left:10% ;
+}
+
+
+/*  */
+/*  */
+/*  */
+/*  */
+.body{
+  display: grid;
+  grid-template-columns: [disenia] 50% [compra] 50%;
+  height: 400px;
+  max-height: 400px;
+  /* padding-left: 2%;
+  padding-right: 2%; */
+}
+.disenia-body{
+  background-image: url("../images/disenia.jpg");
+  grid-column-start: disenia;
+  max-height: 400px;
+  text-align: center;
+  position: relative;
+  /* background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; */
+}
+.compra-body{
+  background-image: url("../images/compra.jpg");
+  grid-column-start: compra;
+  max-height: 400px;
+  text-align: center;
+  position: relative;
+  color: white;
+  /* background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;*/
+}
+.body h1{
+  position: absolute;
+  top: 10%;
+  left: 43%;
+  }
+.body img{
+  max-height: 400px;
+  width: 100%;
+}
+
+.welcome{
+  background: url(imgpath) no-repeat center;
+  background-size: cover;
+  /* position: relative;
+  width: 100%;
+  overflow: hidden;
+  align-items: center; */
+}
+.coontainer {
+  /* width: 100px;
+  height: 100px; */
+  position: relative;
+}
+.bd-example h5{
+  color: white;
+  font-size: 40px;
+}
+.bd-example img{
+  max-height: 716px;
+}
+.bd-example,
+.header {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.header {
+  z-index: 10;
+}
+/* .cont{
+  position: relative;
+}
+.abs{
+
+  position: absolute;
+} */
+@media (max-height: 640px) {
+  .bd-example img{
+    max-height: 640px;
+  }
+}
+@media (max-height: 440px) {
+  .bd-example img{
+    max-height: 433px;
+  }
+}
