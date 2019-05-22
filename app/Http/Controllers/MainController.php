@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 
 namespace App\Http\Controllers;
@@ -6,14 +6,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 /**
- *  
+ *
  */
 class MainController extends Controller
 {
-	
+
 	public function home(){
-		return view('main.home', ["name" => "Pedro"]);
-	} 
+		return view('welcome2');
+	}
 }
 
- ?>
+?>
