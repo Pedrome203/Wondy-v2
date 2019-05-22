@@ -22,51 +22,48 @@
 </head>
 <body>
     <div id="app">
-        <div class="contenedor">
-            <h1 class="logo"> Wondy </h1>
-            <div class="infor">
-              <ul>
-                <li> <a href="#"> Diseña </a></li>
-                {{-- <li> <a href="{{ route('profile', auth()->user()->id) }}"> Perfil </a></li> --}}
-                <li> <a href="{{ route('login') }}"> Login  </a></li>
-                <li> <a href="#"> Carrito </a></li>
-              </ul>
-            </div>
-        </div>
-        <nav class="navbar navbar-expand-md navbar-laravel nabar">
-            <div class="container">
-                  {{-- <a class="navbar-brand" href="{{ url('/') }}">
-                      {{ config('app.name', 'Laravel') }}
-                  </a> --}}
+      <div class="contenedor">
+          <h1 class="logo"> Wondy </h1>
+              @if (Route::has('login'))
+                <div class="infor">
+                      @auth
+                          <a href="{{ url('/home') }}">Home</a>
+                      @else
+                          <a href="{{ route('login') }}">Login</a>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav">
-                      <li class="nav-item">
-                        {{-- <a class="nav-link" href="{{ action('')}}">Info</a> --}}
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="/equipo">Diseñar</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="{{ route('productos.index') }}">Productos</a>
-                      </li>
-                      <li class="nav-item">
-                        {{-- <a class="nav-link" href="{{ route('productos.show') }}">Hombre</a> --}}
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="{{ route('productos.index') }}">Mujer</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="{{ route('productos.index') }}">Niños</a>
-                      </li>
-                      <li class="nav-item">
-                        {{-- <a class="nav-link" href="{{ route('contacto')}}">Contacto</a> --}}
-                      </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+                          @if (Route::has('register'))
+                              <a href="{{ route('register') }}">Register</a>
+                          @endif
+                      @endauth
+              @endif
+          </div>
+      </div>
+      <nav class="navbar navbar-expand-md navbar-laravel nabar">
+          <div class="container">
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav">
+                    <li class="nav-item">
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/equipo">Diseñar</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{{ route('productos.index') }}">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{{ route('productos.index') }}">Mujer</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{{ route('productos.index') }}">Niños</a>
+                    </li>
+                    <li class="nav-item">
+                    </li>
+                  </ul>
+              </div>
+          </div>
+      </nav>
 
         <main class="py-4">
             @yield('content')
