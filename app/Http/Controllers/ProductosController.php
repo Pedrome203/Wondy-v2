@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Producto;
 
 class ProductosController extends Controller
 {
@@ -13,9 +14,9 @@ class ProductosController extends Controller
      */
     public function index()
     {
-        //
+        $productos = Producto::all();
+        return view("productos.index", ["productos" => $productos]);
     }
-
     /**
      * Show the form for creating a new resource.
      *
