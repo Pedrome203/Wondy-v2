@@ -3,18 +3,17 @@
 
 
 
-@if($producto->tipo == '')
-@$producto->tipo = 0;
-@endif
-	
-
 
 <div class="form-group"> {{ Form::text('nombre',$producto->nombre,['class' => 'form-control', 'placeholder' => 'Nombre'])}} </div>
 <div class="form-group"> {{ Form::number('precio',$producto->precio,['class' => 'form-control', 'placeholder' => 'Precio'])}} </div>
 <label for="tipo">Tipo de diseño</label>
  <select class="tipo" name="tipo">
+ 	@if ($producto->tipo != '')
  	  <option value="{{$producto->tipo}}">Elige una opción</option>
-      <option value="1">Manga Larga</option>
+    @else
+     <option value="0">Elige una opción</option>
+    @endif 
+     <option value="1">Manga Larga</option>
       <option value="2">Manga corta</option>
       <option value="3">Manga normal</option>
       <option value="4">Sueter</option>

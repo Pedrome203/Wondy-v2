@@ -66,7 +66,7 @@
                 <div class="producto">
                   <img class="img-1"src="{{URL::asset('/images/playera.jpg')}}" alt="Playera con diseño">
                   <div class="playera-nombre">
-                    <p>{{$producto->nombre}}</p>
+                 <a href="{{url('/productos/'.$producto->id)}}"><p>{{$producto->nombre}}</p></a>   
                   </div>
                   <div class="precio-estrellas">
                     <p>{{$producto->precio}}</p>
@@ -76,8 +76,6 @@
                     <span>Add to cart<span>
                     <img class="add-cart-img" src="{{URL::asset('/images/add.png')}}">
                   </button>
-                  <span class="badge badge-secondary"><a href="{{url('/productos/'.$producto->id.'/edit')}}">Editar</a></span>
-                  @include('productos.borrar',['producto' => $producto])
                 </div>
               @endforeach
 
