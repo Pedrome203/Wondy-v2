@@ -20,7 +20,7 @@ class ProductosController extends Controller
     public function index()
     {
         $productos = Producto::all();
-        
+
         return view("productos.index", ["productos" => $productos]);
     }
     /**
@@ -54,15 +54,11 @@ class ProductosController extends Controller
         $producto->calificacion = 0;
 
         if($producto->save()){
-           return redirect("/productos"); 
+           return redirect("/productos");
         }else{
             return view("productos.create", ["producto" => $producto]);
         }
 
-
-
-        
-        
     }
 
     /**
@@ -108,7 +104,7 @@ class ProductosController extends Controller
         $producto->calificacion = 0;
 
         if($producto->save()){
-           return redirect("/productos"); 
+           return redirect("/productos");
         }else{
             return view("productos.edit", ["producto" => $producto]);
         }
