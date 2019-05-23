@@ -1,8 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.header0')
 
 @section('content')
-
-
     <form class="agregar-productos" action="" method="post">
       <div class="container-productos">
           <div class="filtros">
@@ -47,9 +45,6 @@
                 <li></li>
               </ul>
             </div>
-            {{-- <div class="color-filtro">
-
-            </div> --}}
           </div>
           <div>
           <div class="filtro-container">
@@ -83,7 +78,7 @@
                   </button>
                 </div>
               @endforeach
-       
+
                 <div class="producto">
                   <img class="img-1"src="{{URL::asset('/images/playera.jpg')}}" alt="Playera con diseño">
                   <div class="playera-nombre">
@@ -98,7 +93,7 @@
                     <img class="add-cart-img" src="{{URL::asset('/images/add.png')}}">
                   </button>
                 </div>
-          
+
             </div>
           </div>
 

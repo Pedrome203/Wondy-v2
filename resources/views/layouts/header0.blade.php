@@ -21,10 +21,9 @@
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 </head>
 <body>
-  <p>fdjsaoifjsdoi</p>
     <div id="app">
       <div class="contenedor">
-          <h1 class="logo"> dsfad </h1>
+          <h1 class="logo"> Wondy </h1>
           <ul class="navbar-nav ml-auto">
               <!-- Authentication Links -->
               @guest
@@ -96,6 +95,7 @@
               </div>
           </div>
       </nav>
+
         <main class="py-4">
             @yield('content')
         </main>

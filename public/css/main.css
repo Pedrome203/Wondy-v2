@@ -141,3 +141,340 @@ ul{
     max-height: 433px;
   }
 }
+
+/*******/
+
+
+/************************************************************/
+/***********************Mostrar productos********************/
+/************************************************************/
+.container-productos{
+  margin: 1%;
+  display: grid;
+  grid-template-columns: [filtro] 15% [productos] 85%;
+}
+.filtros-perfil{
+  grid-column-start: filtro;
+}
+
+.inside-input{
+  position: absolute;
+  padding-top: .7%;
+  padding-left:.5%;
+}
+#min{
+  width: 40%;
+  padding-left: 20px;
+  /* padding: 8px 20px; */
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  width: 65px;
+}
+#max{
+  width: 40%;
+  padding-left: 20px;
+
+  /* padding: 7px 20px; */
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  width: 65px;
+}
+#submit-precio {
+  background-color: #393232;
+  color: white;
+  border: none;
+  padding: 0px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.filtro-container {
+  display: flex;
+  justify-content: end;
+  margin-bottom: 2%;
+}
+
+.filtro{
+  margin-right: 5%;
+}
+
+.productos {
+  grid-column-start: productos;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.producto {
+  max-width: 270px;
+  margin-bottom:5%;
+  margin-left: 10px;
+  /* border: 1px solid; */
+
+}
+
+.producto .img-1{
+  width:244px;
+  height:295px;
+}
+
+.playera-nombre{
+  text-align: center;
+}
+.precio-estrellas {
+  height: 35px;
+  margin-left: 5%;
+}
+
+.add-cart-img {
+float: right;
+width: 25px;
+align:left;
+}
+
+.add-cart-btn{
+  text-align: left;
+  width: 100%;
+  height:50px;
+  background-color: #333;
+  color: #ffffff;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  border: none;
+
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/********* mostras descripcion de productos ************/
+/*******************************************************/
+.producto-grid {
+  margin-top: 3%;
+  display: grid;
+  grid-template-columns: [producto] 60% [especificaciones] 40%;
+}
+
+.producto-ver{
+  grid-column-start: producto;
+  display: grid;
+  grid-template-columns: [lista] 15% [playera] 85%;
+}
+.producto-vistas{
+  grid-column-start: lista;
+  padding-left: 60px;
+}
+.img-vista{
+  border: 1px solid;
+  margin-bottom: 20px;
+  width: 80px;
+  height: 80px;
+}
+
+.img-vista:hover{
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.wrapper-producto{
+  grid-column-start: playera;
+  justify-self: center;
+  max-width:550px ;
+  max-height:500px ;
+  min-width: 550px;
+  min-height: 500px;
+  display: inline-block;
+}
+
+/*  Si quieres cambiar para que la playera tenga un tamaño fijo
+hay que mover aqui y el de arriba, quitarle el wrapper (quitar la clase de arriba)*/
+.img-2 {
+  margin-left: auto;
+	margin-right: auto;
+	display: block;
+  /* width: 550px;
+  height: 600px; */
+}
+
+.especificaciones {
+  padding-top: 30px;
+}
+
+
+/***************************************/
+/****************Pefil******************/
+/***************************************/
+
+
+.filtros-perfil{
+  grid-column-start: filtro;
+  padding-left: 5%;
+}
+
+
+.container-productos-perfil{
+  margin: 1%;
+  display: grid;
+  grid-template-columns: [filtro] 20% [productos] 80%;
+}
+
+.perfil{
+  width: 200px;
+  height: 200px;
+  background-color: red;
+  text-align: 35px;
+  margin-left: 10%;
+}
+
+.nombre-perfil{
+  text-align: center;
+  font-size: 35px;
+}
+
+.perf {
+  margin-top: 6%;
+}
+
+/***************************************/
+/**************Comentarios**************/
+/***************************************/
+
+.comentarios {
+  margin-left: 8%;
+  margin-bottom: 2%;
+}
+.comentario {
+  max-width: 800px;
+}
+
+.foto-perfil-comentario{
+  display: inline;
+  width: 50px;
+  height: 50px;
+}
+
+.perfil-comentario{
+  display: table-cell;
+  vertical-align: baseline;
+}
+
+.nombre-perfil-comentario{
+  display: inline;
+  vertical-align: baseline;
+}
+.calificacion-comentario{
+  display: inline;
+  width: 80px;
+  height: 40px;
+}
+.body-comentario{
+  margin-top: 10px;
+  margin-left: 7%;
+}
+.fecha-comentario{
+  font-size: 13px;
+}
+.texto-comentario{
+  font-size: 18px;
+}
+.ajustes-d{
+margin-bottom: 4%;
+display: block;
+height: 40px;
+}
+.ajustes{
+  float:right;
+  margin-right: 50px;
+  width: 40px;
+  height: 40px;
+}
+
+/**************************************/
+/****************Editar****************/
+/**************************************/
+
+.edit-box {
+    margin-top: 3%;
+    display: grid;
+    grid-template-columns: [imagen] 23% [datos] 52% [botones] 25%;
+    height:250px;
+    width:90%;
+
+    /* max-width:90%;
+    max-height:250px; */
+
+    margin-left: 6%;
+    border: 1px solid #fff;
+
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    background-color: #fff;
+  }
+
+.edit-box:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.imagen-editar{
+  grid-column-start: imagen;
+  justify-self: center;
+  align-self: center;
+  height: 250px;
+}
+
+.imagen-editar img{
+  width: 180px;
+  height: 230px;
+}
+
+
+.inf-producto-edit{
+  grid-column-start: datos;
+  padding: 5%;
+  display: grid;
+  grid-template-columns: [primer] 50% [segundo] 50%;
+}
+
+.inf-1{
+  grid-column-start: primer;
+}
+.inf-2{
+  grid-column-start: segundo;
+}
+
+.botones{
+  grid-column-start: botones;
+  justify-self: center;
+  align-self: center;
+}
+
+.botones button{
+  border-radius: 12px;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  width: 200px;
+  justify-self: center;
+}
+
+.botones button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.btn-editar{
+  background-color: #4CAF50;
+  margin-bottom: 20%;
+}
+.btn-eliminar{
+  background-color: #f44336;
+}
