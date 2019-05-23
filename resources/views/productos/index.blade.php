@@ -1,4 +1,4 @@
-@extends('layouts.header0')
+@extends('layouts.header')
 
 @section('content')
     <form class="agregar-productos" action="" method="post">

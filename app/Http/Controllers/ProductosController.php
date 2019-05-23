@@ -7,6 +7,10 @@ use App\Producto;
 
 class ProductosController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -24,7 +28,7 @@ class ProductosController extends Controller
      */
     public function create()
     {
-        //
+        return view("productos.crear");
     }
 
     /**
