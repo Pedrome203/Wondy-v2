@@ -122,6 +122,7 @@ class ProductosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Producto::destroy($id);
+        return redirect('/productos');
     }
 }

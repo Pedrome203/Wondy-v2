@@ -75,8 +75,9 @@
                   <button class="add-cart-btn" type="button" name="button">
                     <span>Add to cart<span>
                     <img class="add-cart-img" src="{{URL::asset('/images/add.png')}}">
-                    <a href="{{url('/productos/'.$producto->id.'/edit')}}">Editar</a>
                   </button>
+                  <span class="badge badge-secondary"><a href="{{url('/productos/'.$producto->id.'/edit')}}">Editar</a></span>
+                  @include('productos.borrar',['producto' => $producto])
                 </div>
               @endforeach
 
