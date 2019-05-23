@@ -52,15 +52,11 @@ class ProductosController extends Controller
         $producto->calificacion = 0;
 
         if($producto->save()){
-           return redirect("/productos"); 
+           return redirect("/productos");
         }else{
             return view("productos.create");
         }
 
-
-
-        
-        
     }
 
     /**
@@ -82,7 +78,6 @@ class ProductosController extends Controller
      */
     public function edit($id)
     {
-        //
     }
 
     /**

@@ -230,6 +230,7 @@ ul{
 
 .playera-nombre{
   text-align: center;
+  word-wrap: break-word;
 }
 .precio-estrellas {
   height: 35px;

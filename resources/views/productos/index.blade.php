@@ -82,7 +82,7 @@
                 <div class="producto">
                   <img class="img-1"src="{{URL::asset('/images/playera.jpg')}}" alt="Playera con diseño">
                   <div class="playera-nombre">
-                    <p>Playera con mangas negras</p>
+                    <p>Playera con mangas sasasasasasasasasasasa</p>
                   </div>
                   <div class="precio-estrellas">
                     <p>$150</p>
