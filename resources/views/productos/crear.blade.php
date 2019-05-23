@@ -11,8 +11,14 @@
 
 <div class="form-group"> {{ Form::text('nombre','',['class' => 'form-control', 'placeholder' => 'Nombre'])}} </div>
 <div class="form-group"> {{ Form::number('precio','',['class' => 'form-control', 'placeholder' => 'Precio'])}} </div>
+<label for="tipo">Tipo de diseño</label>
+ <select class="tipo" name="tipo">
+      <option value="1">Manga Larga</option>
+      <option value="2">Manga corta</option>
+      <option value="3">Manga normal</option>
+      <option value="4">Sueter</option>
+ </select>
 
-<div class="form-group"> {{ Form::number('tipo','',['class' => 'form-control', 'placeholder' => 'tipo'])}} </div>
 
 <div class="form-group"> {{ Form::text('talla','',['class' => 'form-control', 'placeholder' => 'talla'])}} </div>
 
