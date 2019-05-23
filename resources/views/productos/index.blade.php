@@ -75,24 +75,12 @@
                   <button class="add-cart-btn" type="button" name="button">
                     <span>Add to cart<span>
                     <img class="add-cart-img" src="{{URL::asset('/images/add.png')}}">
+                    <a href="{{url('/productos/'.$producto->id.'/edit')}}">Editar</a>
                   </button>
                 </div>
               @endforeach
 
-                <div class="producto">
-                  <img class="img-1"src="{{URL::asset('/images/playera.jpg')}}" alt="Playera con diseño">
-                  <div class="playera-nombre">
-                    <p>Playera con mangas negras</p>
-                  </div>
-                  <div class="precio-estrellas">
-                    <p>$150</p>
-                    <img src="" alt="">
-                  </div>
-                  <button class="add-cart-btn" type="button" name="button">
-                    <span>Add to cart<span>
-                    <img class="add-cart-img" src="{{URL::asset('/images/add.png')}}">
-                  </button>
-                </div>
+          
 
             </div>
           </div>

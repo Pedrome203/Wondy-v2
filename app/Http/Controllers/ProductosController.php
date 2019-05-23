@@ -30,7 +30,8 @@ class ProductosController extends Controller
      */
     public function create()
     {
-        return view("productos.crear");
+        $producto = new Producto;
+        return view("productos.crear", ["producto" => $producto]);
     }
 
     /**
@@ -55,7 +56,7 @@ class ProductosController extends Controller
         if($producto->save()){
            return redirect("/productos"); 
         }else{
-            return view("productos.create");
+            return view("productos.create", ["producto" => $producto]);
         }
 
 
@@ -83,7 +84,8 @@ class ProductosController extends Controller
      */
     public function edit($id)
     {
-        //
+         $producto = Producto::find($id);
+        return view("productos.editar", ["producto" => $producto]);
     }
 
     /**
@@ -95,7 +97,21 @@ class ProductosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $producto = Producto::find($id);
+        $producto->nombre = $request->nombre;
+        $producto->imagen = "miImagen";
+        $producto->tipo = $request->tipo;
+        $producto->precio = $request->precio;
+        $producto->talla = $request->talla;
+        $producto->color = $request->color;
+        $producto->num_ventas = 0;
+        $producto->calificacion = 0;
+
+        if($producto->save()){
+           return redirect("/productos"); 
+        }else{
+            return view("productos.edit", ["producto" => $producto]);
+        }
     }
 
     /**
