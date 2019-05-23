@@ -479,3 +479,67 @@ height: 40px;
 .btn-eliminar{
   background-color: #f44336;
 }
+/****************************/
+/****************************/
+/************Compras*********/
+/****************************/
+/****************************/
+
+
+/****************************/
+/****************************/
+/************Carrito*********/
+/****************************/
+/****************************/
+
+.grid-comprar-index{
+  margin-top: 3%;
+  display: grid;
+  grid-template-columns: [compras] 45% [] 65%;
+  height:250px;
+  width:50%;
+  margin-left: 6%;
+  border: 1px solid #fff;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  background-color: #fff;
+}
+
+
+.edit-box2 {
+    margin-top: 3%;
+    display: grid;
+    grid-template-columns: [imagen] 35% [datos] 65%;
+    height:250px;
+    width:50%;
+    margin-left: 6%;
+    border: 1px solid #fff;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    background-color: #fff;
+  }
+.inf-producto-edit2{
+  grid-column-start: datos;
+  padding: 5%;
+  padding-top: 9%;
+  display: grid;
+  grid-template-columns: [primer] 50% [segundo] 50%;
+}
+
+
+/******************/
+/*****alertas*****/
+/******************/
+.alerta-center{
+  display: flex;
+  justify-content: center;
+}
+.alertas{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  height: 100px;
+  text-align: center;
+  font-size: 30px;
+  color: #333333;
+  background: #f2f2f2;
+}
