@@ -22,7 +22,6 @@ class CreateTablaProductos extends Migration
             $table->char('talla');
             $table->float('calificacion');
           //  $table->string('nombre');
-            $table->string('color');
             $table->unsignedInteger('num_ventas');
             $table->timestamps();
             $table->integer('user_id')->unsigned()->index();

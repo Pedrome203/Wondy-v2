@@ -45,7 +45,7 @@
                           <a class="dropdown-item" href="#">
                              Perfil
                           </a>
-                          <a class="dropdown-item" href="#">
+                          <a class="dropdown-item" href="{{url('/productos/create')}}">
                              Vender
                           </a>
                             <a class="dropdown-item" href="{{ route('logout') }}"
