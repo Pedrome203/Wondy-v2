@@ -49,7 +49,6 @@ class ProductosController extends Controller
         $producto->tipo = $request->tipo;
         $producto->precio = $request->precio;
         $producto->talla = $request->talla;
-        $producto->color = $request->color;
         $producto->num_ventas = 0;
         $producto->calificacion = 0;
 
@@ -100,7 +99,6 @@ class ProductosController extends Controller
         $producto->tipo = $request->tipo;
         $producto->precio = $request->precio;
         $producto->talla = $request->talla;
-        $producto->color = $request->color;
         $producto->num_ventas = 0;
         $producto->calificacion = 0;
 

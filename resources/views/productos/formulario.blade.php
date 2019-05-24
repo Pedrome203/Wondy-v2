@@ -22,7 +22,7 @@
 
 <div class="form-group"> {{ Form::text('talla',$producto->talla,['class' => 'form-control', 'placeholder' => 'talla'])}} </div>
 
-<div class="form-group"> {{ Form::text('color',$producto->color,['class' => 'form-control', 'placeholder' => 'Color'])}} </div>
+
 
 <div class="form-group text-right">
 	<a href="{{url('/productos')}}">Volver</a>

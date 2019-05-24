@@ -23,6 +23,7 @@ class CreateTablaProductos extends Migration
             $table->float('calificacion');
           //  $table->string('nombre');
             $table->unsignedInteger('num_ventas');
+            $table->softDeletes();
             $table->timestamps();
             $table->integer('user_id')->unsigned()->index();
         });
