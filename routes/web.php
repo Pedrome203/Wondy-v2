@@ -15,7 +15,9 @@ Route::get('/',  'MainController@home');
 
 Route::resource('productos', 'ProductosController');
 Route::resource('compras', 'ComprasController');
-
+Route::get('carrito',function(){
+  return view('carrito.index');
+});
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

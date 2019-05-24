@@ -166,7 +166,7 @@ return [
          * Package Service Providers...
          */
        Collective\Html\HtmlServiceProvider::class,
-
+       App\Providers\CarritoProvider::class,
         /*
          * Application Service Providers...
          */
