@@ -23,7 +23,7 @@
             </div>
             <div class="inf-3">
               <div class="form-group">
-                {!! Form::open(['route' => ['carrito.modify'], 'method' => 'POST']) !!}
+                {!! Form::open(['url' => ['carrito.modify'], 'method' => 'POST']) !!}
                   <label for="cantidad">Cantidad:</label>
                   <select class="form-control" name="cantidad" id="cantidad" onchange="this.form.submit()">
                     <option {{$producto->cantidad == 1 ? 'selected' : ''}} value="1">1</option>
@@ -68,20 +68,19 @@
               <input type="hidden" name="_method" value="UPDATE">
               @csrf
             </form> --}}
-          {!! Form::open(['route' => ['carrito.modify', 1], 'method' => 'POST']) !!}
+          {!! Form::open(['url' => ['/carrito/edit'], 'method' => 'POST']) !!}
             <label for="cantidad">Cantidad:</label>
             <select class="form-control" id="cantidad" onchange="this.form.submit()">
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
               <option value="4">4</option>
-              <option {{5 == 5 ? 'selected' : ''}} value="5">5</option>
+  
               <option value="6">6</option>
               <option value="7">7</option>
               <option value="8">8</option>
               <option value="9">9</option>
               <option value="10">10</option>
-              {{-- {{$producto->cantidad == 5 ? selected : ''}} --}}
             </select>
           {!! Form::close() !!}
 

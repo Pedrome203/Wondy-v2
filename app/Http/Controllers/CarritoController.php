@@ -57,16 +57,10 @@ class CarritoController extends Controller
       }
     }
     public function cambiarCantidad(Request $request){
+      $request->cantidad = 0;
       dd($request->cantidad);
-
-      // $productoId = $request->input();
-      if(\Auth::check()){
-
-      }
-      else{
-
-      }
-      return redirect('/carrito');
+          
+      
     }
 //eliminar dato de carrito
   public function delete($productoId){
