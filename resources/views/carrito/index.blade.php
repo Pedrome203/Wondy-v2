@@ -23,7 +23,7 @@
             </div>
             <div class="inf-3">
               <div class="form-group">
-                {!! Form::open(['route' => ['carrito.modify'], 'method' => 'POST']) !!}
+                {!! Form::open(['route' => ['carrito.modify',$producto->id], 'method' => 'POST']) !!}
                   <label for="cantidad">Cantidad:</label>
                   <select class="form-control" name="cantidad" id="cantidad" onchange="this.form.submit()">
                     <option {{$producto->cantidad == 1 ? 'selected' : ''}} value="1">1</option>
@@ -68,9 +68,11 @@
               <input type="hidden" name="_method" value="UPDATE">
               @csrf
             </form> --}}
-          {!! Form::open(['route' => ['carrito.modify', 1], 'method' => 'POST']) !!}
+          <form action="{{ route('carrito.modify', 123) }}" method="POST">
+          @csrf
+          <input id="productoId" name="productoId" type="hidden" value="xm234jq">
             <label for="cantidad">Cantidad:</label>
-            <select class="form-control" id="cantidad" onchange="this.form.submit()">
+            <select name="cantidad" class="form-control" id="cantidad" onchange="this.form.submit()">
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -83,7 +85,7 @@
               <option value="10">10</option>
               {{-- {{$producto->cantidad == 5 ? selected : ''}} --}}
             </select>
-          {!! Form::close() !!}
+          </form>
 
           </div>
           {{-- <form action="{{ route('documentos.destroy', $documento->id) }}" method="POST">
@@ -99,7 +101,7 @@
     @if(isset($productos))
       <p>Subtotal ({{ count($productos) }} productos): ${{$precio}} </p>
     @else
-      <p>Subtotal (0 productos): $0 </p>
+      <p>Subtotal (0 productos): ${{$precio}} </p>
     @endif
     <button type="button" name="button">
       Ir al pago

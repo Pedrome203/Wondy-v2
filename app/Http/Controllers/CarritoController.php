@@ -11,13 +11,13 @@ class CarritoController extends Controller
 {
     public function index(){
       $productos = $this->getProductos();
-      $precio = 0;
+      $precio = 10000;
       if(isset($productos)){
         foreach ($productos as $producto) {
           $precio += $producto->precio;
         }
       }
-      return view('carrito.index', compact('productos', 'precio'));
+      return view('carrito.index',  ["productos" => $productos],  ["precio" => $precio]);
     }
 
 // agregar dato al carrito de compras
@@ -56,9 +56,10 @@ class CarritoController extends Controller
         }
       }
     }
-    public function cambiarCantidad(Request $request){
-      dd($request->cantidad);
 
+    public function cambiarCantidad(Request $request, Producto $producto){
+      // dd($producto->hola);
+      dd($request->all());
       // $productoId = $request->input();
       if(\Auth::check()){
 
