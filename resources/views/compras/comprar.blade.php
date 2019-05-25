@@ -9,14 +9,15 @@
   {{-- **mostrar datos del usuario --}}
   <div class="user-data-comprar">
     <h2>Datos de la entrega</h2>
-    <p>Nombre: </p>
-    <p>Direccion: <span>fsdafdsafdsfdsafdasfdsafsadfdsafdsafdsafdsfdsafdsafdsfdsafdsafdsfdsafdsafsadf</span></p>
+    <p>Nombre: {{$user->name}}</p>
+    <p>Correo: {{$user->email}}</p>
+    <p>Direccion:<span>fsdaffdasfdsafsadfdsafdsafdsafdsfdsafdsafdsfdsafdsafdsfdsafdsafsadf</span></p>
     <p>Celular: </p>
   </div>
   {{-- **mostrar productos que va a comprar --}}
   <div class="comprar-productos">
-    @foreach ($iterable as $key => $value)
-
+    @foreach ($productos as $producto)
+      
     @endforeach
   </div>
 

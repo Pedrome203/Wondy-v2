@@ -6,6 +6,7 @@ use App\Compra;
 use App\Producto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Session;
 
 class ComprasController extends Controller
 {
@@ -47,7 +48,21 @@ class ComprasController extends Controller
     //procuto comprar
     public function create()
     {
-        return view('compras.comprar');
+      // dd(\Auth::user());
+      //sacar datos de usuario
+      $user = \Auth::user();
+      $carrito = Session::get('carrito');
+      //sacar objetos en carrito que quiere Comprar
+      $productos = $carrito->productosEnCarrito();
+      dd($productos);
+      //sacar total
+      $precio = 0;
+      if(isset($productos)){
+        foreach ($productos as $producto) {
+          $precio += $producto->precio;
+        }
+      }
+      return view('compras.comprar', compact('user','productos','total'));
     }
 
     /**
@@ -82,7 +97,7 @@ class ComprasController extends Controller
     {
         //
     }
-  
+
     /**
      * Update the specified resource in storage.
      *

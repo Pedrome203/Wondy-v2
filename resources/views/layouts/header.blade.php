@@ -37,7 +37,7 @@
                   @endif
                   @else
                     <li class="nav-item">
-                        <a class="nav-link color-nav-link" href="#">Carrito {{Session::has('carrito') ? Session::get('carrito')->total : '0'}} </a>
+                        <a class="nav-link color-nav-link" href="#">Carrito {{Session::has('carrito') ? Session::get('carrito')->cantidad : '0'}} </a>
                     </li>
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle color-nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

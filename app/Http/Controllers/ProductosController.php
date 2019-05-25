@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Producto;
+use App\Carrito;
+
 use Illuminate\Support\Facades\Auth;
 
 class ProductosController extends Controller
@@ -19,6 +21,7 @@ class ProductosController extends Controller
      */
     public function index()
     {
+    
         $productos = Producto::all();
 
         return view("productos.index", ["productos" => $productos]);

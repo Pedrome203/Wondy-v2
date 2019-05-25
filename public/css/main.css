@@ -226,6 +226,7 @@ ul{
 
 .producto {
   max-width: 270px;
+  width: 250px;
   margin-bottom:5%;
   margin-left: 10px;
   /* border: 1px solid; */
