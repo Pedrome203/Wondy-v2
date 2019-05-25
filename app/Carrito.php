@@ -8,64 +8,77 @@ class Carrito extends Model
 {
     protected $table = 'carrito';
 
-    public static function agruparProductos(){
-      if(Auth::check()){
-        //guardar en bd
-      }
-      else{
-        //guardar en sessions
-      }
-    }
-
-    public static function registrosEnCarrito(){
-      return $this->hasMany('App\CarritoProducto');
-    }
-
-    public function productosEnCarrito(){
-      return $this->belongsToMany('App\Producto', 'productos-en-carrito');
-    }
-
-    public function regresarProductos(){
-      return $this->productosEnCarritos()->count();
-    }
-
-    public $total = 0;
+    //
+    //trabajar con carrito en sessiones
+    //
+    public $cantidad = 0;
     public $productos = null;
     public $productosId = null;
+    public function __construct($oldCar){
+      if($oldCar){
+        $this->cantidad = $oldCar->total;
+        $this->productos = $oldCar->productos;
+        $this->productosId = $oldCar->productosId;
+      }
+    }
+
     public function agregarItemCarritoSession($productoId){
-      $storedItem = ['total' => 0, 'itemId' => $productoId];
+      $storedItem = ['cantidad' => 0, 'itemId' => $productoId];
       if ($this->$productos) {
         //si existe ese id dentro de productos;
         if(array_key_exists($productoId, $productos)){
             $this->productosId = $productoId;
             $storedItem = $this->productos[$productoId];
         }
-        // foreach ($productos as $producto) {
-        //     if($producto['itemId'] == $productoId){
-        //       $storedItem = $producto;
-        //     }
-        }
-        $storedItem['total']++;
-        $this->productos[$productoId] = $storedItem;
-        $this->total++;
       }
-
-        public function reduceByOne($id) {
-            $this->items[$id]['qty']--;
-            $this->items[$id]['price'] -= $this->items[$id]['item']['price'];
-            $this->totalQty--;
-            $this->totalPrice -= $this->items[$id]['item']['price'];
-            if ($this->items[$id]['qty'] <= 0) {
-                unset($this->items[$id]);
-            }
+      if($this->$productosId){
+        if(!in_array($productoId,$this->$productosId)){
+          array_push($this->$productosId, $procutoId);
         }
-        public function removeItem($id) {
-            $this->totalQty -= $this->items[$id]['qty'];
-            $this->totalPrice -= $this->items[$id]['price'];
-            unset($this->items[$id]);
-        }
+      }
+      $storedItem['cantidad']++;
+      $this->productos[$productoId] = $storedItem;
+      $this->cantidad++;
+    }
+    public function quitarUno($id) {
+      $this->$productos[$id]['cantidad']--;
+      $this->cantidad--;
+    }
+
+    public function modificarCantidad($cantidad, $id) {
+      if($cantidad > $this->productos[$id]['cantidad']){
+
+      }
+      else{
+
+      }
+      $this->$productos[$id]['cantidad']--;
+      $this->cantidad--;
+    }
+
+    public function quitarProducto($id) {
+      $this->cantidad -= $this->productos[$id]['cantidad'];
+      $index = array_search($id,$this->productosId);
+      unser($this->productosId[$index]);
+      unset($this->productos[$id]);
+    }
 
 
+
+//Carrito por usuario conectados
+
+    public static function registrosEnCarrito(){
+      return $this->hasMany('App\CarritoProducto');
+    }
+
+//regresa productos que tiene el carrito
+    public function productosEnCarrito(){
+      return $this->belongsToMany('App\Producto', 'productos-en-carritos');
+    }
+
+    public function regresarProductos(){
+          return $this->productosEnCarritos()->count();
+    }
 
     // protected $fillable = ["status"];
     public function numeroProductos(){

@@ -18,6 +18,8 @@ Route::resource('compras', 'ComprasController');
 
 Route::get('/agregar-a-carro/{productoId}', 'CarritoController@agregar');
 Route::get('carrito','CarritoController@index');
+Route::post('carrito/edit','CarritoController@cambiarCantidad')->name('carrito.modify');
+
 
 Auth::routes();
 

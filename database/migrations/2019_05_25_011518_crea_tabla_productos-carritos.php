@@ -17,7 +17,7 @@ class CreaTablaProductosCarritos extends Migration
             $table->bigIncrements('id');
             $table->integer('carrito_id');
             $table->integer('producto_id');
-
+            $table->integer('cantidad');
             $table->timestamps();
         });
     }
