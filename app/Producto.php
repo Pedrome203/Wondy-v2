@@ -15,4 +15,26 @@ class Producto extends Model
     {
         return $this->morphMany('App\Archivo', 'modelo');
     }
+
+    public function setNombreAttribute($nombre)
+    {
+        $this->attributes['nombre'] = strtoupper($nombre);
+    }
+   	public function getTipoAttribute($tipo)
+    {
+    	if($tipo == 1){
+			return "Manga Larga";    		
+    	}
+    	else if($tipo == 2){
+    		return "Manga corta";
+    	}
+    	else if($tipo == 3){
+    		return "Manga normal";	
+    	}
+    	else if($tipo == 3){
+    		return "Sueter";	
+    	}
+
+        
+    }
 }

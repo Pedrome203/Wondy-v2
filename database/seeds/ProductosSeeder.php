@@ -20,6 +20,7 @@ class ProductosSeeder extends Seeder
             'tipo' => 1,
             'precio' => 999.00,
             'talla' => 'c',
+            'sexo' => 1,
             'imagen' => 'miImagen',
             'precio' => 999.00,
             'calificacion' => 0.0,

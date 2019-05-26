@@ -79,6 +79,7 @@ class ProductosController extends Controller
 
         $producto = new Producto;
         $producto->nombre = $request->nombre;
+        $producto->sexo = $request->sexo;
         $producto->user_id = Auth::user()->id;
         $producto->tipo = $request->tipo;
         $producto->precio = $request->precio;

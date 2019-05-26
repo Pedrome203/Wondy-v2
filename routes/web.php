@@ -10,6 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+// E-mail verification
+Route::get('/register/verify/{code}', 'Auth\RegisterController@verify');
 
 Route::get('/',  'MainController@home');
 
@@ -27,6 +29,6 @@ Route::post('carrito/{producto}', 'CarritoController@delete')->name('carrito.des
 
 Route::resource('archivo', 'ArchivoController', ['except' => ['create', 'edit', 'update']]);
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');

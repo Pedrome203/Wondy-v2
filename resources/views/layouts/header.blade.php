@@ -92,11 +92,12 @@
                     <li class="nav-item">
                     </li>
                     <li class="nav-item">
-                      
-                      <a class="nav-link" href="{{ route('productos.index') }}">Mujer</a>
+
+                      <a class="nav-link" name="sexo" href="#">Mujer</a>
+
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="{{ route('productos.index') }}">Niños</a>
+                      <a class="nav-link" name="sexo" href="#">Hombre</a>
                     </li>
                     <li class="nav-item">
                     </li>

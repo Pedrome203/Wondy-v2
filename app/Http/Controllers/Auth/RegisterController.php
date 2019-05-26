@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
+
 class RegisterController extends Controller
 {
     /*
@@ -61,14 +62,11 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
+
+
+
     protected function create(array $data)
     {
-        //hacer carrito
-        // dd(/Auth::id());
-        // Carrito::crearCarrito($userId);
-        // Carrito::crearPorUsuario(){
-        //
-        // }
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
