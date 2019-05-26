@@ -61,8 +61,7 @@
                         <img class="add-cart-img" src="{{URL::asset('/images/add.png')}}">
                       </button>
                   </form>
-                  <span class="badge badge-secondary"><a href="{{url('/productos/'.$producto->id.'/edit')}}">Editar</a></span>
-                  @include('productos.borrar',['producto' => $producto])
+                  
                 </div>
               @endforeach
 
