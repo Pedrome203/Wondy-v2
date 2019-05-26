@@ -25,10 +25,8 @@ Route::post('carrito','CarritoController@agregar')->name('carrito.agregar');
 Route::post('carrito/{producto}/edit','CarritoController@cambiarCantidad')->name('carrito.modify');
 Route::post('carrito/{producto}', 'CarritoController@delete')->name('carrito.destroy');
 
-//comprar
+Route::resource('archivo', 'ArchivoController', ['except' => ['create', 'edit', 'update']]);
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-
