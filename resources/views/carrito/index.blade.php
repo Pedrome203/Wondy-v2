@@ -60,13 +60,11 @@
     @else
       <p>Subtotal (0 productos): ${{$precio}} </p>
     @endif
-    <form action="{{ route('carrito.destroy', $producto->getOriginal('pivot_id')) }}" method="post">
-      <input type="hidden" name="productoId" value="{{$producto->id}}">
-      @csrf
-      <button type="button" name="button">
-        Ir al pago
-      </button>
-    </form>
+    <a href="{{ route('compras.create') }}">
+        <button type="button" name="button">
+          Ir al pago
+        </button>
+    </a>
   </div>
 </div>
 

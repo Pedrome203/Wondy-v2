@@ -562,9 +562,9 @@ height: 40px;
   padding-left: 4%;
 
 }
-/******************/
+/***********************/
 /*****comprar-pagar*****/
-/******************/
+/**********************/
 
 /******************/
 /*****alertas*****/
@@ -588,6 +588,25 @@ height: 40px;
 /****************/
 /****Comprar*****/
 /****************/
+.edit-box3 {
+    margin-top: 3%;
+    display: grid;
+    grid-template-columns: [imagen] 40% [datos] 60%;
+    height: 190px;
+    width: 85%;
+    margin-left: 6%;
+    border: 1px solid #fff;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    background-color: #fff;
+}
+.inf-producto-edit3{
+  grid-column-start: datos;
+  padding: 3%;
+  padding-top: 4%;
+  display: grid;
+  grid-template-columns: [primer] 60% [segundo] 40%;
+}
+
 .titulo-compra{
   /* background: pink; */
   height:120px;
@@ -620,4 +639,13 @@ height: 40px;
 .user-data-comprar h2{
   margin-top: 10px;
   flex-grow: 1;
+}
+.modificar{
+  width: 55%;
+}
+.boton-compra{
+  margin-top:2% ;
+  margin-left:3%;
+  margin-right:2%;
+  width: 95%;
 }
