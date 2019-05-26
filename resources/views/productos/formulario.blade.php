@@ -1,5 +1,5 @@
 
-{!! Form::open(['url' => $url, 'method' => $method]) !!}
+{!! Form::open(['url' => $url, 'method' => $method,'files' => true]) !!}
 
 
 
@@ -12,15 +12,47 @@
  	  <option value="{{$producto->tipo}}">Elige una opción</option>
     @else
      <option value="0">Elige una opción</option>
-    @endif 
+    @endif
      <option value="1">Manga Larga</option>
       <option value="2">Manga corta</option>
       <option value="3">Manga normal</option>
       <option value="4">Sueter</option>
  </select>
+<div>
+<label for="tipo">Talla</label>
+ <select class="talla" name="talla">
+  @if ($producto->talla != '')
+    <option value="{{$producto->talla}}">Elige una opción</option>
+    @else
+     <option value="0">Elige una opción</option>
+    @endif
+     <option value="c">Chica</option>
+      <option value="m">Mediana</option>
+      <option value="g">Grande</option>
+      <option value="x">Extra Grande</option>
+ </select>
+  
+</div>
 
+<div>
+<label for="sexo">Genero</label>
+ <select class="sexo" name="sexo">
+  @if ($producto->tipo != '')
+    <option value="{{$producto->sexo}}">Elige una opción</option>
+    @else
+     <option value="0">Elige una opción</option>
+    @endif
+     <option value="1">Hombre</option>
+      <option value="2">Mujer</option>
+ </select>
+  
+</div>
 
-<div class="form-group"> {{ Form::text('talla',$producto->talla,['class' => 'form-control', 'placeholder' => 'talla'])}} </div>
+  <div class="form-group">
+    {{-- <label for="exampleFormControlFile1">Example file input</label> --}}
+    {!! Form::file('image', null) !!}
+    {{-- <input name="img" type="file" class="form-control-file" id="exampleFormControlFile1"> --}}
+  </div>
 
 
 

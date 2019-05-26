@@ -20,7 +20,7 @@ class CreateTablaProductos extends Migration
             $table->tinyinteger('tipo');//manga larga, normal sueter, sudadera, playera
             $table->float('precio');
             $table->char('talla');
-            $table->char('sexo');
+            $table->tinyinteger('sexo');
             $table->float('calificacion');
           //  $table->string('nombre');
             $table->unsignedInteger('num_ventas');

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Producto;
 use App\Carrito;
-
+use Storage;
 use Illuminate\Support\Facades\Auth;
 
 class ProductosController extends Controller
@@ -19,33 +19,33 @@ class ProductosController extends Controller
      */
     public function index(Request $request)
     {
+      // dd(Storage::url('playeras/mCtMFl3ZGkbhN0FJZNvDNI1cllFFfHiloXjNcvBF.jpeg'));
+      // Storage::get($request->);
+      if(!empty($request->tipo) || !empty($request->ordenamiento)){
 
-    if(!empty($request->tipo) || !empty($request->ordenamiento)){
+      if($request->ordenamiento == "1"){
+                  $productos =  Producto::orderBy('created_at', 'desc')->get();
+              }
+      if($request->ordenamiento == "2"){
+                  $productos = Producto::orderBy('num_ventas', 'desc')->get();
+              }
+      if($request->ordenamiento == "3"){
+                  $productos = Producto::orderBy('precio', 'asc')->get();
+              }
+      if($request->ordenamiento == "4"){
+                  $productos = Producto::orderBy('precio', 'desc')->get();
+              }
 
-    if($request->ordenamiento == "1"){
-                $productos =  Producto::orderBy('created_at', 'desc')->get();
-            }
-    if($request->ordenamiento == "2"){
-                $productos = Producto::orderBy('num_ventas', 'desc')->get();   
-            }
-    if($request->ordenamiento == "3"){
-                $productos = Producto::orderBy('precio', 'asc')->get();
-            }
-    if($request->ordenamiento == "4"){
-                $productos = Producto::orderBy('precio', 'desc')->get();   
-            }
+      if($request->Min != '' && $request->Max != '' ){
+           $productos = Producto::whereBetween('precio', [$request->Min, $request->Max])->get();
+          }
+      }
+     else{
+           $productos = Producto::all();
+      }
 
-    if($request->Min != '' && $request->Max != '' ){
-         $productos = Producto::whereBetween('precio', [$request->Min, $request->Max])->get();      
-        } 
-    }
-   else{
-         $productos = Producto::all();
-    }
+      return view("productos.index", ["productos" => $productos]);
 
-
-    return view("productos.index", ["productos" => $productos]);    
-        
     }
 
 
@@ -68,16 +68,17 @@ class ProductosController extends Controller
      */
     public function store(Request $request)
     {
+      // dd($request->file('image'));
         $producto = new Producto;
         $producto->nombre = $request->nombre;
+        $producto->sexo = $request->sexo;
         $producto->user_id = Auth::user()->id;
-        $producto->imagen = "miImagen";
         $producto->tipo = $request->tipo;
         $producto->precio = $request->precio;
         $producto->talla = $request->talla;
         $producto->num_ventas = 0;
         $producto->calificacion = 0;
-
+        $producto->imagen = $request->file('image')->store('public');
         if($producto->save()){
            return redirect("/productos");
         }else{
@@ -108,7 +109,7 @@ class ProductosController extends Controller
     {
 
          $producto = Producto::find($id);
-         
+
         return view("productos.editar", ["producto" => $producto]);
     }
 

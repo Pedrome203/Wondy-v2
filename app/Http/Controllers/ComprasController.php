@@ -14,10 +14,6 @@ use Session;
 
 class ComprasController extends Controller
 {
-  public function __construct()
-    {
-        $this->middleware('auth');
-    }
     /**
      * Display a listing of the resource.
      *
@@ -58,8 +54,9 @@ class ComprasController extends Controller
     {
       //sacar datos de usuario
       $user = \Auth::user();
+      //sacar carrito
       $carrito = Session::get('carrito');
-      //sacar objetos en carrito que quiere Comprar
+      //sacar objetos en carrito que quiere comprar
       $productos = $carrito->productosEnCarrito()->get();
       if($productos->count() == 0){
         return redirect('productos');
@@ -90,6 +87,9 @@ class ComprasController extends Controller
 
         foreach($productos as $producto) {
           // dd($producto->pivot);
+          // for ($i=0; $i < $producto->pivot->cantidad; $i++) {
+          //   $precio += $producto->precio;
+          // }
             Compra::create([
               'user_id' => $userId,
               'producto_id' => $producto->pivot->producto_id,

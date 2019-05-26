@@ -92,7 +92,9 @@
                     <li class="nav-item">
                     </li>
                     <li class="nav-item">
+
                       <a class="nav-link" name="sexo" href="#">Mujer</a>
+
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" name="sexo" href="#">Hombre</a>
