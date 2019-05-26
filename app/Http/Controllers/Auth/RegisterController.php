@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/crearCarrito';
 
     /**
      * Create a new controller instance.
@@ -63,6 +63,12 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        //hacer carrito
+        // dd(/Auth::id());
+        // Carrito::crearCarrito($userId);
+        // Carrito::crearPorUsuario(){
+        //
+        // }
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],

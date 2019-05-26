@@ -44,7 +44,7 @@
                 <div class="producto">
                   <img class="img-1"src="{{URL::asset('/images/playera.jpg')}}" alt="Playera con diseño">
                   <div class="playera-nombre">
-                 <a href="{{url('/productos/'.$producto->id)}}"><p>{{$producto->nombre}}</p></a>   
+                 <a href="{{url('/productos/'.$producto->id)}}"><p>{{$producto->nombre}}</p></a>
                   </div>
                   <div>
                     <p>{{$producto->tipo}}</p>
@@ -53,10 +53,16 @@
                     <p>{{$producto->precio}}</p>
                     <img src="" alt="">
                   </div>
-                  <button class="add-cart-btn" type="button" name="button">
-                    <span>Add to cart<span>
-                    <img class="add-cart-img" src="{{URL::asset('/images/add.png')}}">
-                  </button>
+                  <form class="" action="{{ route('carrito.agregar') }}" method="POST">
+                    @csrf
+                    <input id="productoId" name="productoId" type="hidden" value="{{$producto->id}}">
+                    <button class="add-cart-btn" type="submit" name="button">
+                      <span>Add to cart<span>
+                        <img class="add-cart-img" src="{{URL::asset('/images/add.png')}}">
+                      </button>
+                  </form>
+                  <span class="badge badge-secondary"><a href="{{url('/productos/'.$producto->id.'/edit')}}">Editar</a></span>
+                  @include('productos.borrar',['producto' => $producto])
                 </div>
               @endforeach
 
