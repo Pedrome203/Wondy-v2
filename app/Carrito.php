@@ -118,14 +118,26 @@ class Carrito extends Model
     }
     public static function loadCarrito(){
       if(\Auth::check()){
-
         $userId = \Auth::id();
         $carrito = Carrito::where('user_id', $userId)->first();
-        if($carrito == null){
-
+        if($carrito == null){//crear carrito
+          Carrito::crearCarrito();
+          $carrito = Session::get('carrito');
+          $carrito->loadToSession();
+        }else{//guardar carrito
+          Session::put('carrito', $carrito);
+          $carrito = Session::get('carrito');
+          $carrito->loadToSession();
         }
         // dd($carrito);
-        Session::put('carrito', $carrito);
+      }
+    }
+    public function loadToSession(){
+      $productos = $this->productosEnCarrito()->get();
+      if($productos->count() > 0){
+        foreach ($productos as $producto) {
+          $this->agregarItemCarritoSession($producto->id);
+        }
       }
     }
 }

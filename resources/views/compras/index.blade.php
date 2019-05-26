@@ -15,6 +15,7 @@
             <p>Precio:<span> {{$compra->cantidad }}</span></p>
           </div>
           <div class="inf-2">
+            <p>Cantidad:{{$compra->cantidad }} </p>
             <p>Fecha:<span> {{$compra->fecha_compra }}</span></p>
           </div>
         </div>

@@ -31,7 +31,6 @@ class CarritoController extends Controller
 // agregar dato al carrito de compras
     public function agregar(Request $request)
     {
-
       if(\Auth::check()){
         //se saca el carrito de sesiones
         $carrito = Session::get('carrito');
@@ -70,7 +69,6 @@ class CarritoController extends Controller
         }
       }
       return redirect()->route('carrito.index');
-
     }
 
     public function cambiarCantidad(Request $request, $productoId){
@@ -153,6 +151,7 @@ class CarritoController extends Controller
       Carrito::loadCarrito();
       return redirect('productos');
     }
+
     public function crearCarritoSession(){
       $oldCar = null;
       $carrito = new Carrito($oldCar);

@@ -92,6 +92,7 @@
                     <li class="nav-item">
                     </li>
                     <li class="nav-item">
+                      
                       <a class="nav-link" href="{{ route('productos.index') }}">Mujer</a>
                     </li>
                     <li class="nav-item">

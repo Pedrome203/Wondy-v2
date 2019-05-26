@@ -11,8 +11,8 @@
     <h2>Datos de la entrega</h2>
     <p>Nombre: {{$user->name}}</p>
     <p>Correo: {{$user->email}}</p>
-    <p>Direccion:<span>fsdaffdasfdsafsadfdsafdsafdsafdsfdsafdsafdsfdsafdsafdsfdsafdsafsadf</span></p>
-    <p>Celular: </p>
+    <p>Direccion:<span>{{$user->direccion}}</span></p>
+    <p>Celular: {{$user->celular}}</p>
   </div>
   {{-- **mostrar productos que va a comprar --}}
   <div class="comprar-productos ">
@@ -29,6 +29,8 @@
           </div>
           <div class="inf-2">
             <p>Precio: {{$producto->precio}}</p>
+            <p>Cantidad: {{$producto->getOriginal('pivot_cantidad')}}</p>
+
           </div>
         </div>
       </div>
@@ -38,7 +40,7 @@
   {{-- **boton para realizar la compra --}}
   <form action="{{ route('compras.store') }}" method="post">
     {{-- <input type="hidden" name="productoId" value="{{$producto->id}}"> --}}
-    <input type="hidden" name="productos" value="{{$productos}}"">
+    <input type="hidden" name="productos" value="{{$productos}}">
     @csrf
     <button class="btn btn-primary boton-compra" type="sub" name="button">Comprar</button>
   </form>
