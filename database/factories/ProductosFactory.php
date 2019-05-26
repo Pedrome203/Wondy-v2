@@ -15,6 +15,7 @@ $factory->define(\App\Producto::class, function (Faker $faker) {
         'imagen' => $faker->sentence,
         'calificacion' => 0.0,
         'num_ventas' => 0,
+        'sexo' => $faker->numberBetween(1,2),
         'user_id' => 1,
         'descripcion' => $faker->sentence(8),
     ];

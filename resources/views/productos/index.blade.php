@@ -49,6 +49,9 @@
                   <div>
                     <p>{{$producto->tipo}}</p>
                   </div>
+                  <dir>
+                    <p>{{$producto->sexo}}</p>
+                  </dir>
                   <div class="precio-estrellas">
                     <p>{{$producto->precio}}</p>
                     <img src="" alt="">
@@ -61,6 +64,10 @@
                         <img class="add-cart-img" src="{{URL::asset('/images/add.png')}}">
                       </button>
                   </form>
+                  @if(Auth::check() && $producto->user_id == Auth::user()->id)
+                  <span class="badge badge-secondary"><a href="{{url('/productos/'.$producto->id.'/edit')}}">Editar</a></span>
+                  @include('productos.borrar',['producto' => $producto])
+                @endif
                   
                 </div>
               @endforeach

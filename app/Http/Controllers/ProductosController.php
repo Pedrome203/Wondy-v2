@@ -43,6 +43,7 @@ class ProductosController extends Controller
          $productos = Producto::all();
     }
 
+
     return view("productos.index", ["productos" => $productos]);    
         
     }
