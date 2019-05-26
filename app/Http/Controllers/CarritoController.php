@@ -31,6 +31,9 @@ class CarritoController extends Controller
       if(\Auth::check()){
         //se saca el carrito de sesiones
         $carrito = Session::get('carrito');
+        if($carrito == null){
+
+        }
         //se sacan id y mas cosas
         if(!$carrito->productoRepetido($request->productoId)){
           $userId = \Auth::id();

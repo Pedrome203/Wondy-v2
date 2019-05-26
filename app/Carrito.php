@@ -118,8 +118,12 @@ class Carrito extends Model
     }
     public static function loadCarrito(){
       if(\Auth::check()){
+
         $userId = \Auth::id();
         $carrito = Carrito::where('user_id', $userId)->first();
+        if($carrito == null){
+
+        }
         // dd($carrito);
         Session::put('carrito', $carrito);
       }
