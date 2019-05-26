@@ -1,17 +1,17 @@
 @extends('layouts.header')
 
 @section('content')
-      
+
       <div class="container-productos">
           <div class="filtros">
           <div class="filtro-container">
           <form action="{{ route('productos.index') }}" method="PUTCHAR">
-              
+
              @csrf
-             
+
           </div>
-            <div class="precio-filtro">  
-             
+            <div class="precio-filtro">
+
                 <label for="">Precio:</label>
                 <br>
                 <span class="inside-input">$</span>
@@ -20,15 +20,15 @@
                 <input id="max" type="number" name="Max" placeholder="Max">
               <input type="submit" class="btn btn-success" value="Ir">
             </div>
-    
+
           </div>
           <div>
-     
+
 
 
           <div class="filtro-container">
-              
-             
+
+
                   <label for="text">Ordenar por:</label>
                   <select class="form-control" name="ordenamiento" id="ordenamiento" onchange="this.form.submit()">
                     <option value="1">Agregado recientemente</option>
@@ -37,12 +37,12 @@
                     <option value="4">Precio de alto a bako</option>
                   </select>
         </form>
-  
+
           </div>
             <div class="productos">
               @foreach ($productos as $producto)
                 <div class="producto">
-                  <img class="img-1"src="{{URL::asset('/images/playera.jpg')}}" alt="Playera con diseño">
+                  <img class="img-1" src="{{Storage::url($producto->imagen)}}" alt="Playera con diseño">
                   <div class="playera-nombre">
                  <a href="{{url('/productos/'.$producto->id)}}"><p>{{$producto->nombre}}</p></a>
                   </div>
@@ -61,7 +61,7 @@
                         <img class="add-cart-img" src="{{URL::asset('/images/add.png')}}">
                       </button>
                   </form>
-                  
+
                 </div>
               @endforeach
 
