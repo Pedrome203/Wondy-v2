@@ -8,17 +8,7 @@
           <form action="{{ route('productos.index') }}" method="PUTCHAR">
               
              @csrf
-                  <label for="text">Mostrar:</label>
-                  <select class="form-control" name="tipo" id="tipo" onchange="this.form.submit()">
-                    <option value="0">Todos</option>
-                    <option value="1">Playera normal</option>
-                    <option value="2">Playera sin manga</option>
-                    <option value="3">Playera manga larga</option>
-                    <option value="4">Sueter</option>
-                    <option value="5">Sudadera</option>
-                  </select>
-  
-  
+             
           </div>
             <div class="precio-filtro">  
              

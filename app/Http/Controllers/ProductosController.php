@@ -19,7 +19,7 @@ class ProductosController extends Controller
     if(!empty($request->tipo) || !empty($request->ordenamiento)){
  
 
-    $productos = Producto::where('tipo', $request->tipo)->get();
+    
        
 
     if($request->ordenamiento == "1"){
