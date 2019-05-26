@@ -8,21 +8,46 @@ use Illuminate\Support\Facades\Auth;
 
 class ProductosController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $productos = Producto::all();
+    if(!empty($request->tipo) || !empty($request->ordenamiento)){
+ 
 
-        return view("productos.index", ["productos" => $productos]);
+    $productos = Producto::where('tipo', $request->tipo)->get();
+       
+
+    if($request->ordenamiento == "1"){
+                $productos =  Producto::orderBy('created_at', 'desc')->get();
+            }
+    if($request->ordenamiento == "2"){
+                $productos = Producto::orderBy('num_ventas', 'desc')->get();   
+            }
+    if($request->ordenamiento == "3"){
+                $productos = Producto::orderBy('precio', 'asc')->get();
+            }
+    if($request->ordenamiento == "4"){
+                $productos = Producto::orderBy('precio', 'desc')->get();   
+            }
+
+    if($request->Min != '' && $request->Max != '' ){
+         $productos = Producto::whereBetween('precio', [$request->Min, $request->Max])->get();      
+        } 
     }
+   else{
+         $productos = Producto::all();
+    }
+
+    return view("productos.index", ["productos" => $productos]);    
+        
+    }
+
+
     /**
      * Show the form for creating a new resource.
      *
@@ -80,7 +105,9 @@ class ProductosController extends Controller
      */
     public function edit($id)
     {
+
          $producto = Producto::find($id);
+         
         return view("productos.editar", ["producto" => $producto]);
     }
 

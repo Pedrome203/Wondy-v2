@@ -1,65 +1,53 @@
 @extends('layouts.header')
 
 @section('content')
-    <form class="agregar-productos" action="" method="post">
+      
       <div class="container-productos">
           <div class="filtros">
-            <div class="tipo-filtro">
-              <label for="">Tipo:</label>
-              <ul>
-                <li>
-                  <a href="#">Playera normal</a>
-                </li>
-                <li>
-                  <a href="#">Playera sin manga</a>
-                </li>
-                <li>
-                  <a href="#">Playera manga larga</a>
-                </li>
-                <li>
-                  <a href="#">Sueter</a>
-                </li>
-                <li>
-                  <a href="#">Sudadera</a>
-                </li>
-              </ul>
-            </div>
-            <div class="precio-filtro">
-              <form class="" action="index.html" method="post" id="precio">
+          <div class="filtro-container">
+          <form action="{{ route('productos.index') }}" method="PUTCHAR">
+              
+             @csrf
+                  <label for="text">Mostrar:</label>
+                  <select class="form-control" name="tipo" id="tipo" onchange="this.form.submit()">
+                    <option value="0">Todos</option>
+                    <option value="1">Playera normal</option>
+                    <option value="2">Playera sin manga</option>
+                    <option value="3">Playera manga larga</option>
+                    <option value="4">Sueter</option>
+                    <option value="5">Sudadera</option>
+                  </select>
+  
+  
+          </div>
+            <div class="precio-filtro">  
+             
                 <label for="">Precio:</label>
                 <br>
                 <span class="inside-input">$</span>
-                <input id="min" type="text" name="Min" placeholder="Min">
+                <input id="min" type="number" name="Min" placeholder="Min">
                 <span class="inside-input">$</span>
-                <input id="max" type="text" name="Max" placeholder="Max">
-              </form>
-              <button id="submit-precio" type="submit" form="precio" value="Submit">Ir</button>
+                <input id="max" type="number" name="Max" placeholder="Max">
+              <input type="submit" class="btn btn-success" value="Ir">
             </div>
-            <div class="estrella-filtro">
-              <label for="">Estrellas:</label>
-              <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-              </ul>
-            </div>
+    
           </div>
           <div>
+     
+
+
           <div class="filtro-container">
-            <form class="" action="index.html" method="get">
-              <div class="filtro">
-                <label for="text"> Ordenar por: </label>
-                <select name="filtro" onchange="this.form.submit();">
-                    <option value="Agregado reciente">Agregado reciente</option>
-                    <option value="Mas comprado">Mas comprado</option>
-                    <option value="Precio de bajo a alto">Precio de bajo a alto</option>
-                    <option value="Precio de alto a bajo">Precio de alto a bajo</option>
-                </select>
-                <noscript><input type="submit" value="Submit"></noscript>
-              </div>
-            </form>
+              
+             
+                  <label for="text">Ordenar por:</label>
+                  <select class="form-control" name="ordenamiento" id="ordenamiento" onchange="this.form.submit()">
+                    <option value="1">Agregado recientemente</option>
+                    <option value="2">Más comprado</option>
+                    <option value="3">Precio de bajo a alto</option>
+                    <option value="4">Precio de alto a bako</option>
+                  </select>
+        </form>
+  
           </div>
             <div class="productos">
               @foreach ($productos as $producto)
@@ -67,6 +55,9 @@
                   <img class="img-1"src="{{URL::asset('/images/playera.jpg')}}" alt="Playera con diseño">
                   <div class="playera-nombre">
                  <a href="{{url('/productos/'.$producto->id)}}"><p>{{$producto->nombre}}</p></a>   
+                  </div>
+                  <div>
+                    <p>{{$producto->tipo}}</p>
                   </div>
                   <div class="precio-estrellas">
                     <p>{{$producto->precio}}</p>
