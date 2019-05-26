@@ -19,29 +19,29 @@ class ProductosController extends Controller
      */
     public function index(Request $request)
     {
+
       // dd(Storage::url('playeras/mCtMFl3ZGkbhN0FJZNvDNI1cllFFfHiloXjNcvBF.jpeg'));
-      // Storage::get($request->);
       if(!empty($request->tipo) || !empty($request->ordenamiento)){
 
       if($request->ordenamiento == "1"){
-                  $productos =  Producto::orderBy('created_at', 'desc')->get();
+                  $productos =  Producto::orderBy('created_at', 'desc')->paginate(10)->get();
               }
       if($request->ordenamiento == "2"){
-                  $productos = Producto::orderBy('num_ventas', 'desc')->get();
+                  $productos = Producto::orderBy('num_ventas', 'desc')->paginate(10)->get();
               }
       if($request->ordenamiento == "3"){
-                  $productos = Producto::orderBy('precio', 'asc')->get();
+                  $productos = Producto::orderBy('precio', 'asc')->paginate(10)->get();
               }
       if($request->ordenamiento == "4"){
-                  $productos = Producto::orderBy('precio', 'desc')->get();
+                  $productos = Producto::orderBy('precio', 'desc')->paginate(10)->get();
               }
 
       if($request->Min != '' && $request->Max != '' ){
-           $productos = Producto::whereBetween('precio', [$request->Min, $request->Max])->get();
+           $productos = Producto::whereBetween('precio', [$request->Min, $request->Max])->paginate(10)->get();
           }
       }
      else{
-           $productos = Producto::all();
+           $productos = Producto::paginate(10);
       }
 
       return view("productos.index", ["productos" => $productos]);

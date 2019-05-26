@@ -75,4 +75,7 @@
 
       </div>
     </form>
+    <div class="">
+      {{ $productos->links()}}
+    </div>
 @endsection
