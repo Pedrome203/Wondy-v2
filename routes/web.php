@@ -30,3 +30,5 @@ Route::post('carrito/{producto}', 'CarritoController@delete')->name('carrito.des
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
