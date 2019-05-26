@@ -42,16 +42,21 @@
             <div class="productos">
               @foreach ($productos as $producto)
                 <div class="producto">
-                  <img class="img-1" src="{{Storage::url($producto->imagen)}}" alt="Playera con diseño">
-                  <div class="playera-nombre">
-                 <a href="{{url('/productos/'.$producto->id)}}"><p>{{$producto->nombre}}</p></a>
-                  </div>
+                  <a href="{{url('/productos/'.$producto->id)}}">
+                    <img class="img-1" src="{{Storage::url($producto->imagen)}}" alt="Playera con diseño">
+                    <div class="playera-nombre">
+                      {{-- <a href="{{url('/productos/'.$producto->id)}}">  --}}
+                      <p>{{$producto->nombre}}</p>
+                      {{-- </a> --}}
+                    </div>
+                  </a>
                   <div>
-                    <p>{{$producto->tipo}}</p>
+                    {{-- <p>Tipo: {{$producto->tipo}}</p> --}}
                   </div>
                   <div class="precio-estrellas">
-                    <p>{{$producto->precio}}</p>
-                    <img src="" alt="">
+                    <p>${{$producto->precio}}</p>
+                    <p>Tipo: {{$producto->tipo}}</p>
+                    {{-- <img src="" alt=""> --}}
                   </div>
                   <form class="" action="{{ route('carrito.agregar') }}" method="POST">
                     @csrf
