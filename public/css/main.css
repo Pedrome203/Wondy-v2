@@ -1,3 +1,12 @@
+.color-nav-link{
+  color: black!important;
+  /* margin-right: 20%; */
+  padding-right: 20px!important;
+}
+.navbar-nav{
+  flex-direction: row;
+}
+
 ul{
   list-style-type: none;
 }
@@ -217,6 +226,7 @@ ul{
 
 .producto {
   max-width: 270px;
+  width: 250px;
   margin-bottom:5%;
   margin-left: 10px;
   /* border: 1px solid; */
@@ -478,4 +488,164 @@ height: 40px;
 }
 .btn-eliminar{
   background-color: #f44336;
+}
+/****************************/
+/****************************/
+/************Compras*********/
+/****************************/
+/****************************/
+
+
+/****************************/
+/****************************/
+/************Carrito*********/
+/****************************/
+/****************************/
+
+.grid-carrito{
+  margin-top: 1%;
+  display: grid;
+  grid-template-columns: [carrito] 70% [compras] 30%;
+}
+.carrito{
+  grid-column-start: carrito;
+}
+.comprar-box{
+  max-height: 150px;
+  padding: 4%;
+  grid-column-start: compras;
+  background-color: #f3f3f3;
+  width: 90%;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+.comprar-box p{
+  font-size: 24px;
+  color: black;
+}
+.comprar-box button{
+  width: 100%;
+}
+
+.edit-box2 {
+    margin-top: 3%;
+    display: grid;
+    grid-template-columns: [imagen] 30% [datos] 70%;
+    height:190px;
+    width:85%;
+    margin-left: 6%;
+    border: 1px solid #fff;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    background-color: #fff;
+  }
+
+.imagen-editar2{
+    grid-column-start: imagen;
+    justify-self: center;
+    align-self: center;
+    width: 100px;
+    height: 150px;
+  }
+
+.inf-producto-edit2{
+  grid-column-start: datos;
+  padding: 3%;
+  padding-top: 4%;
+  display: grid;
+  grid-template-columns: [primer] 34% [segundo] 34% [tercero] 32%;
+}
+.inf-3{
+  grid-column-start: tercero;
+}
+#titulo-carrito{
+  font-size: 30px;
+  padding-left: 4%;
+
+}
+/***********************/
+/*****comprar-pagar*****/
+/**********************/
+
+/******************/
+/*****alertas*****/
+/******************/
+.alerta-center{
+  display: flex;
+  justify-content: center;
+}
+.alertas{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  height: 100px;
+  text-align: center;
+  font-size: 30px;
+  color: #333333;
+  background: #f2f2f2;
+}
+
+/****************/
+/****Comprar*****/
+/****************/
+.edit-box3 {
+    margin-top: 3%;
+    display: grid;
+    grid-template-columns: [imagen] 40% [datos] 60%;
+    height: 190px;
+    width: 85%;
+    margin-left: 6%;
+    border: 1px solid #fff;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    background-color: #fff;
+}
+.inf-producto-edit3{
+  grid-column-start: datos;
+  padding: 3%;
+  padding-top: 4%;
+  display: grid;
+  grid-template-columns: [primer] 60% [segundo] 40%;
+}
+
+.titulo-compra{
+  /* background: pink; */
+  height:120px;
+  margin-left: 10%;
+}
+.user-data-comprar{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: #333333;
+  background: #f2f2f2;
+  flex-direction:column;
+   font-size: 20px;
+  /* padding: 5%; */
+  background: #f2f2f2;
+  width:40% ;
+  height:270px;
+  max-height:300px;
+
+  margin-left: 20%;
+  padding-left: 4%;
+}
+.user-data-comprar p {
+  max-width: 400px;
+}
+.user-data-comprar p span{
+  word-wrap: break-word;
+  font-size: 15px;
+}
+.user-data-comprar h2{
+  margin-top: 10px;
+  flex-grow: 1;
+}
+.modificar{
+  width: 55%;
+}
+.boton-compra{
+  margin-top:2% ;
+  margin-left:3%;
+  margin-right:2%;
+  width: 95%;
 }

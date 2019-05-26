@@ -14,6 +14,18 @@
 Route::get('/',  'MainController@home');
 
 Route::resource('productos', 'ProductosController');
+Route::resource('compras', 'ComprasController');
+
+//carrito
+Route::get('cargarCarrito','CarritoController@cargarCarritoUser')->name('carrito.cargar');
+Route::get('crearCarrito','CarritoController@crearCarritoUser')->name('carrito.crear');
+Route::get('/agregar-a-carro/{productoId}', 'CarritoController@agregar');
+Route::get('carrito','CarritoController@index')->name('carrito.index');
+Route::post('carrito','CarritoController@agregar')->name('carrito.agregar');
+Route::post('carrito/{producto}/edit','CarritoController@cambiarCantidad')->name('carrito.modify');
+Route::post('carrito/{producto}', 'CarritoController@delete')->name('carrito.destroy');
+
+//comprar
 
 Auth::routes();
 
