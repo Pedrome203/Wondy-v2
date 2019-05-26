@@ -655,3 +655,7 @@ height: 40px;
   margin-right:2%;
   width: 95%;
 }
+.pagination{
+  display: flex;
+  justify-content:  center;
+}

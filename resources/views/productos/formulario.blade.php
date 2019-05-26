@@ -1,8 +1,8 @@
 
+@include('partials.mensajes')
+@include('partials.formErrors')
+
 {!! Form::open(['url' => $url, 'method' => $method,'files' => true]) !!}
-
-
-
 
 <div class="form-group"> {{ Form::text('nombre',$producto->nombre,['class' => 'form-control', 'placeholder' => 'Nombre'])}} </div>
 <div class="form-group"> {{ Form::number('precio',$producto->precio,['class' => 'form-control', 'placeholder' => 'Precio'])}} </div>
