@@ -6,9 +6,7 @@
           <div class="filtros">
           <div class="filtro-container">
           <form action="{{ route('productos.index') }}" method="PUTCHAR">
-
              @csrf
-
           </div>
             <div class="precio-filtro">
 

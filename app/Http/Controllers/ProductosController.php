@@ -69,6 +69,14 @@ class ProductosController extends Controller
     public function store(Request $request)
     {
       // dd($request->file('image'));
+      $request->validate([
+            'nombre' => 'required|max:40',
+            'tipo' => 'required|min:1|max:10',
+            'precio' => 'required|min:1|max:10000',
+            'talla' => 'required|min:1|max:100',
+            'imagen' => 'required|image',
+        ]);
+
         $producto = new Producto;
         $producto->nombre = $request->nombre;
         $producto->user_id = Auth::user()->id;
