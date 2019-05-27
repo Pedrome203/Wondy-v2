@@ -26,31 +26,61 @@ class ProductosController extends Controller
      */
     public function index(Request $request)
     {
+      if(\Auth::check()){
+        $userId = \Auth::id();
+        if(!empty($request->tipo) || !empty($request->ordenamiento)){
 
-      // dd(Storage::url('playeras/mCtMFl3ZGkbhN0FJZNvDNI1cllFFfHiloXjNcvBF.jpeg'));
-      if(!empty($request->tipo) || !empty($request->ordenamiento)){
-
-      if($request->ordenamiento == "1"){
-                  $productos =  Producto::order('created_at', 'desc')->paginate(10);
-              }
-      if($request->ordenamiento == "2"){
-                  $productos = Producto::order('num_ventas', 'desc')->paginate(10);
-              }
-      if($request->ordenamiento == "3"){
-                  $productos = Producto::order('precio', 'asc')->paginate(10);
-              }
-      if($request->ordenamiento == "4"){
-                  $productos = Producto::order('precio', 'desc')->paginate(10);
-              }
-
-      if($request->Min != '' && $request->Max != '' ){
-           $productos = Producto::whereBetween('precio', [$request->Min, $request->Max])->paginate(10)->get();
+          if($request->ordenamiento == "1"){
+            $productos =  Producto::where('user_id', '!=' ,  $userId)
+            ->order('created_at', 'desc')->paginate(10);
           }
-      }
-     else{
-           $productos = Producto::paginate(10);
-      }
+          if($request->ordenamiento == "2"){
+            $productos = Producto::where('user_id', '!=' ,  $userId)
+            ->order('num_ventas', 'desc')->paginate(10);
+          }
+          if($request->ordenamiento == "3"){
+            $productos = Producto::where('user_id', '!=' ,  $userId)
+            ->order('precio', 'asc')->paginate(10);
+          }
+          if($request->ordenamiento == "4"){
+            $productos = Producto::where('user_id', '!=' ,  $userId)
+            ->order('precio', 'desc')->paginate(10);
+          }
 
+          if($request->Min != '' && $request->Max != '' ){
+            $productos = Producto::where('user_id', '!=' ,  $userId)
+            ->whereBetween('precio', [$request->Min, $request->Max])->paginate(10)->get();
+          }
+        }
+        else{
+          $productos = Producto::where('user_id', '!=' ,  $userId)
+          ->paginate(10);
+        }
+      }
+      else
+      {
+        if(!empty($request->tipo) || !empty($request->ordenamiento)){
+          if($request->ordenamiento == "1"){
+            $productos =  Producto::order('created_at', 'desc')->paginate(10);
+          }
+          if($request->ordenamiento == "2"){
+            $productos = Producto::order('num_ventas', 'desc')->paginate(10);
+          }
+          if($request->ordenamiento == "3"){
+            $productos = Producto::order('precio', 'asc')->paginate(10);
+          }
+          if($request->ordenamiento == "4"){
+            $productos = Producto::order('precio', 'desc')->paginate(10);
+          }
+
+          if($request->Min != '' && $request->Max != '' ){
+            $productos = Producto::whereBetween('precio', [$request->Min, $request->Max])->paginate(10)->get();
+          }
+        }
+        else{
+          $productos = Producto::paginate(10);
+        }
+      }
       return view("productos.index", ["productos" => $productos]);
 
     }

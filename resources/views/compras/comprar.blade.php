@@ -11,15 +11,16 @@
     <h2 style="color:red;">Datos de la entrega</h2>
     <p>Nombre: {{$user->name}}</p>
     <p>Correo: {{$user->email}}</p>
-    <p>Direccion:<span>{{$user->address}}</span></p>
+    <p>Direccion:<span>{{$user->address}}fdsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span></p>
     <p>Celular: {{$user->phone}}</p>
   </div>
+  
   {{-- **mostrar productos que va a comprar --}}
   <div class="comprar-productos ">
     @foreach ($productos as $producto)
       <div class="edit-box3 modificar">
-        <div class="imagen-editar2">
-          <img src="{{URL::asset('/images/playera.jpg')}}" alt="">
+        <div class="imagen-editar-div">
+          <img class="imagen-editar2" src="{{Storage::url($producto->imagen)}}" alt="">
         </div>
         <div class="inf-producto-edit3">
           <div class="inf2-1">

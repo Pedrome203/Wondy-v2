@@ -140,6 +140,13 @@ ul{
 
   position: absolute;
 } */
+
+@media (max-height: 1102px) {
+
+  .user-data-comprar p {
+    max-width: 300px;
+  }
+}
 @media (max-height: 840px) {
   .user-data-comprar{
     width: 70%;
@@ -629,21 +636,22 @@ height: 40px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-content: end;
   color: #333333;
   background: #f2f2f2;
   flex-direction:column;
-   font-size: 20px;
+  font-size: 20px;
   /* padding: 5%; */
   background: #f2f2f2;
-  width:40% ;
-  height:270px;
+  width:50% ;
+  height:310px;
   max-height:300px;
 
   margin-left: 20%;
   padding-left: 4%;
 }
 .user-data-comprar p {
-  max-width: 400px;
+  max-width: 600px;
 }
 .user-data-comprar p span{
   word-wrap: break-word;

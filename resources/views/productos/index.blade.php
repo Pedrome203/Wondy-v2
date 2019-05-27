@@ -38,7 +38,7 @@
       <div class="productos">
 
         @foreach ($productos as $producto)
-          @can('mostrar', $producto)
+          {{-- @can('mostrar', $producto) --}}
             <div class="producto">
               <a href="{{url('/productos',$producto->id)}}">
                 <img class="img-1" src="{{Storage::url($producto->imagen)}}" alt="">
@@ -63,7 +63,7 @@
                 </form>
 
               </div>
-            @endcan
+            {{-- @endcan --}}
           @endforeach
 
         </div>

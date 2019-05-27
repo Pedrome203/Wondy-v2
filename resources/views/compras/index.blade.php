@@ -6,7 +6,7 @@
     @foreach ($productos as $compra)
       <div class="edit-box">
         <div class="imagen-editar">
-          <img src="{{URL::asset('/')}}" alt="">
+          <img src="{{Storage::url($compra->imagen)}}" alt="">
         </div>
         <div class="inf-producto-edit">
           <div class="inf-1">
