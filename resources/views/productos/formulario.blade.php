@@ -16,7 +16,7 @@
      <option {{$producto->tipo == 'Manga Larga' ? 'selected' : ''}} value="1">Manga Larga</option>
       <option {{$producto->tipo == 'Manga corta' ? 'selected' : ''}} value="2">Manga corta</option>
       <option {{$producto->tipo == 'Manga normal'? 'selected' : ''}} value="3">Manga normal</option>
-      <option {{$producto->tipo == 'sueter' ? 'selected' : ''}} value="4">Sueter</option>
+      <option {{$producto->tipo == 'Sueter' ? 'selected' : ''}} value="4">Sueter</option>
  </select>
 <div>
 <label for="tipo">Talla</label>

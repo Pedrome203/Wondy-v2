@@ -45,6 +45,7 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                          
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
@@ -118,7 +119,7 @@
              <a href="{{route('productos.index')}}"><img src="{{URL::asset('/images/buy3.jpg')}}" class="d-block w-100" alt="...">
               <div class="carousel-caption d-none d-md-block">
                 <h5>Compra</h5>
-              </div></a> 
+              </div></a>
             </div>
 
           </div>
