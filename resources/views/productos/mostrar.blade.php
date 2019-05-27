@@ -27,8 +27,8 @@
             <img class="add-cart-img" src="{{URL::asset('/images/add.png')}}">
           </button>
         </form>
-      @endcan
     </form>
+  @endcan
     @can('delete', $producto)
       <span class="button badge-secondary"><a href="{{url('/productos/'.$producto->id.'/edit')}}">Editar</a></span>
       @include('productos.borrar',['producto' => $producto])
