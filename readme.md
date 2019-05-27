@@ -35,7 +35,7 @@ https://laragon.org/
 
 El siguiente paso seria crear una base de datos en mysql 
   
-Una vez que se tiene la base de datos, se descarga el proyecto de github: https://github.com/BrandonMDiaz/Wondy.git
+Una vez que se tiene la base de datos, se descarga el proyecto de github
 
 Una vez que tenemos los servicios y programas antes mencionados nuestro proyecto ya está descargado.
 
