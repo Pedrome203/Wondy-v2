@@ -15,7 +15,7 @@ class ProductosController extends Controller
 
   public function __construct()
     {
-        $this->middleware('auth')->except('productos.index');
+        $this->middleware('auth')->except('index');
         $this->middleware('perfil')->only('perfil');
     }
 
