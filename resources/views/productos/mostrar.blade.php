@@ -13,7 +13,7 @@
       <img class="img-2"src="{{Storage::url($producto->imagen)}}" alt="Playera con diseño">
     </div>
   </div>
-  <form class="especificaciones" action="index.html" method="post">
+  <div class="especificaciones" action="index.html" method="post">
     <p>Precio: ${{$producto->precio}}</p>
     <p>Talla: {{$producto->talla}}</p>
     <p>Tipo:  {{$producto->tipo}}</p>
@@ -27,11 +27,11 @@
             <img class="add-cart-img" src="{{URL::asset('/images/add.png')}}">
           </button>
         </form>
-    </form>
   @endcan
-    @can('delete', $producto)
-      <span class="button badge-secondary"><a href="{{url('/productos/'.$producto->id.'/edit')}}">Editar</a></span>
-      @include('productos.borrar',['producto' => $producto])
-    @endcan
+  @can('delete', $producto)
+    <span class=" badge-secondary"><a href="{{url('/productos/'.$producto->id.'/edit')}}">Editar</a></span>
+    @include('productos.borrar',['producto' => $producto])
+  @endcan
+</div>
   </div>
 @endsection

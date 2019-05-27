@@ -9,16 +9,19 @@
     @if(isset($productos) && sizeof($productos) > 0)
       @foreach ($productos as $producto)
         <div class="edit-box2">
-          <div class="imagen-editar2">
-            <img src="{{URL::asset('/images/playera.jpg')}}" alt="">
+          <div class="imagen-editar-div">
+            <img class="imagen-editar2" src="{{Storage::url($producto->imagen)}}" alt="">
           </div>
           <div class="inf-producto-edit2">
             <div class="inf2-1">
               <p>Nombre: {{$producto->nombre}}</p>
-              <p>Descripcion: {{$producto->descripcion}}</p>
+              <p>Tipo: {{$producto->tipo}}</p>
+              <p>Talla: {{$producto->talla}}</p>
             </div>
             <div class="inf-2">
+              <p>Sexo: {{$producto->sexo}}</p>
               <p>Precio: {{$producto->precio}}</p>
+
             </div>
             <div class="inf-3">
               <div class="form-group">

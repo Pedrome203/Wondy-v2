@@ -8,10 +8,10 @@
   </div>
   {{-- **mostrar datos del usuario --}}
   <div class="user-data-comprar">
-    <h2>Datos de la entrega</h2>
+    <h2 style="color:red;">Datos de la entrega</h2>
     <p>Nombre: {{$user->name}}</p>
     <p>Correo: {{$user->email}}</p>
-    <p>Direccion:<span>{{$user->direccion}}</span></p>
+    <p>Direccion:<span>{{$user->direccion}}fsdfsdffdsafasdfsdafasfsadsadfsadfsdafdsafasdfasdfasfdsaf</span></p>
     <p>Celular: {{$user->celular}}</p>
   </div>
   {{-- **mostrar productos que va a comprar --}}

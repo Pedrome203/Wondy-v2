@@ -140,6 +140,11 @@ ul{
 
   position: absolute;
 } */
+@media (max-height: 840px) {
+  .user-data-comprar{
+    width: 70%;
+  }
+}
 @media (max-height: 640px) {
   .bd-example img{
     max-height: 640px;
@@ -545,11 +550,12 @@ height: 40px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     background-color: #fff;
   }
-
-.imagen-editar2{
-    grid-column-start: imagen;
+.imagen-editar-div{
+  grid-column-start: imagen;
     justify-self: center;
     align-self: center;
+}
+.imagen-editar2{
     width: 100px;
     height: 150px;
   }
