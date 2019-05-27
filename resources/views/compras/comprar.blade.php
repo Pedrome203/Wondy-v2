@@ -8,7 +8,7 @@
   </div>
   {{-- **mostrar datos del usuario --}}
   <div class="user-data-comprar">
-    <h2>Datos de la entrega</h2>
+    <h2 style="color:red;">Datos de la entrega</h2>
     <p>Nombre: {{$user->name}}</p>
     <p>Correo: {{$user->email}}</p>
     <p>Direccion:<span>{{$user->address}}</span></p>
