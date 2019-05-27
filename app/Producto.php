@@ -54,4 +54,8 @@ class Producto extends Model
     		return "Hombre";
     	}
     }
+
+    public function scopeOrder($query, $metodo, $orden){
+    	return $query->orderBy($metodo, $orden);
+    }
 }

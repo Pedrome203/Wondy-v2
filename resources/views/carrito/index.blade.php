@@ -15,8 +15,7 @@
           <div class="inf-producto-edit2">
             <div class="inf2-1">
               <p>Nombre: {{$producto->nombre}}</p>
-              <p>Tipo: {{$producto->tipo}}</p>
-              <p>Calificacion: {{$producto->calificacion}}</p>
+              <p>Descripcion: {{$producto->descripcion}}</p>
             </div>
             <div class="inf-2">
               <p>Precio: {{$producto->precio}}</p>

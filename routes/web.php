@@ -19,6 +19,7 @@ Route::resource('productos', 'ProductosController');
 Route::resource('compras', 'ComprasController');
 Route::get('ventas','ComprasController@ventas')->name('ventas.index');
 
+
 //carrito
 Route::get('cargarCarrito','CarritoController@cargarCarritoUser')->name('carrito.cargar');
 Route::get('crearCarrito','CarritoController@crearCarritoUser')->name('carrito.crear');

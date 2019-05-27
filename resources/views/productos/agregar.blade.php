@@ -1,6 +1,9 @@
 @extends('layouts.header')
+@if(Auth::check())
 
 @section('content')
+
+
 
   <div class="container">
     @if(@isset($procutos))
@@ -53,3 +56,4 @@
   </div>
 
 @endsection
+ @endif
