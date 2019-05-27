@@ -20,6 +20,8 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 </head>
+
+@extends('partials.mensajes')
 <body>
     <div id="app">
       <div class="contenedor">

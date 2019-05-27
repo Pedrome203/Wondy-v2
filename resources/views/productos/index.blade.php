@@ -1,6 +1,9 @@
-@extends('layouts.header')
 
+
+@extends('layouts.header')
 @extends('partials.mensajes')
+
+
 @section('content')
 
   <div class="container-productos">
