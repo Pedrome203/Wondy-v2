@@ -17,6 +17,7 @@ Route::get('/',  'MainController@home');
 
 Route::resource('productos', 'ProductosController');
 Route::resource('compras', 'ComprasController');
+Route::get('ventas','ComprasController@ventas')->name('ventas.index');
 
 //carrito
 Route::get('cargarCarrito','CarritoController@cargarCarritoUser')->name('carrito.cargar');
@@ -26,6 +27,10 @@ Route::get('carrito','CarritoController@index')->name('carrito.index');
 Route::post('carrito','CarritoController@agregar')->name('carrito.agregar');
 Route::post('carrito/{producto}/edit','CarritoController@cambiarCantidad')->name('carrito.modify');
 Route::post('carrito/{producto}', 'CarritoController@delete')->name('carrito.destroy');
+
+//perfil
+Route::get('perfil','ProductosController@perfil');
+
 
 Route::resource('archivo', 'ArchivoController', ['except' => ['create', 'edit', 'update']]);
 

@@ -2,27 +2,27 @@
 
 @section('content')
   {{-- se ven todas las ventas --}}
-  @if(isset($compras) && sizeof($compras) > 0)
-    @foreach ($compras as $compra)
+  @if(isset($productos) && sizeof($productos) > 0)
+    @foreach ($productos as $producto)
       <div class="edit-box">
         <div class="imagen-editar">
           <img src="{{URL::asset('/')}}" alt="">
         </div>
         <div class="inf-producto-edit">
           <div class="inf-1">
-            <p>Tipo:  {{ $compra->tipo }} </p>
-            <p>Nombre:<span> {{$compra->nombre }}</span></p>
-            <p>Precio:<span> {{$compra->cantidad }}</span></p>
+            <p>Tipo:  {{ $producto->tipo }} </p>
+            <p>Nombre:<span> {{$producto->nombre }}</span></p>
+            <p>Precio:<span> {{$producto->cantidad }}</span></p>
           </div>
           <div class="inf-2">
-            <p>Fecha:<span> {{$compra->fecha_compra }}</span></p>
+            <p>Fecha:<span> {{$producto->fecha_producto }}</span></p>
           </div>
         </div>
-        <div class="botones">
-          {!! Form::open(['route' => ['compras.destroy', $compra->id], 'method' => 'delete']) !!}
+        {{-- <div class="botones">
+          {!! Form::open(['route' => ['productos.destroy', $producto->id], 'method' => 'delete']) !!}
             <button  class="btn-eliminar" type="button" name="button">Borrar</button>
           {!! Form::close() !!}
-        </div>
+        </div> --}}
       </div>
     @endforeach
   @else

@@ -40,7 +40,7 @@
             <div class="productos">
               @foreach ($productos as $producto)
                 <div class="producto">
-                  <a href="{{url('/productos/',$producto->id)}}">
+                  <a href="{{url('/productos',$producto->id)}}">
                     <img class="img-1" src="{{Storage::url($producto->imagen)}}" alt="Playera con diseño">
                     <div class="playera-nombre">
                       {{-- <a href="{{url('/productos/'.$producto->id)}}">  --}}

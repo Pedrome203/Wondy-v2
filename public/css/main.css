@@ -343,15 +343,15 @@ hay que mover aqui y el de arriba, quitarle el wrapper (quitar la clase de arrib
 }
 
 .perfil{
-  width: 200px;
-  height: 200px;
+  width: 20%;
+  height: 10%;
   background-color: red;
-  text-align: 35px;
-  margin-left: 10%;
+  /* text-align: 35px; */
+  /* margin-left: 10%; */
 }
 
 .nombre-perfil{
-  text-align: center;
+  /* text-align: center; */
   font-size: 35px;
 }
 
