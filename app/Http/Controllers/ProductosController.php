@@ -171,17 +171,17 @@ class ProductosController extends Controller
         'tipo' => 'required|min:1|max:10',
         'talla' => 'required',
         'sexo' => 'required',
-        'image' => 'required|image',
+        'image' => 'image',
       ]);
         $producto = Producto::find($id);
         $producto->nombre = $request->nombre;
-        $producto->imagen = "miImagen";
         $producto->tipo = $request->tipo;
         $producto->precio = $request->precio;
         $producto->talla = $request->talla;
-        $producto->num_ventas = 0;
-        $producto->calificacion = 0;
-        $request->file('image')->store('public')
+        $producto->sexo = $request->sexo;
+        if($request->file('image') != null){
+          $producto->imagen = $request->file('image')->store('public');
+        }
         if($producto->save()){
            return redirect("/productos");
         }else{

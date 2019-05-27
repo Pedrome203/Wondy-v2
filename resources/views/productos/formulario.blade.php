@@ -49,6 +49,8 @@
 </div>
 
   <div class="form-group">
+
+    {{-- <input class="form-control" type="file" name="image" value="{{($producto->imagen)}}"> --}}
     {{-- <label for="exampleFormControlFile1">Example file input</label> --}}
     {!! Form::file('image', null) !!}
     {{-- <input name="img" type="file" class="form-control-file" id="exampleFormControlFile1"> --}}
