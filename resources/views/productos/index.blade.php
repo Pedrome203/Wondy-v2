@@ -39,8 +39,9 @@
 
           </div>
             <div class="productos">
-          
+
               @foreach ($productos as $producto)
+                @can('mostrar', $producto)
                 {{-- @if($producto->user_id != Auth::user()->id) --}}
                 <div class="producto">
                   <a href="{{url('/productos',$producto->id)}}">
@@ -70,11 +71,17 @@
                         <img class="add-cart-img" src="{{URL::asset('/images/add.png')}}">
                       </button>
                   </form>
-           
+
                 </div>
+                {{-- @can('delete', $producto) --}}
+                  {{-- @if(Auth::check() && $producto->user_id == Auth::user()->id) --}}
+                  {{-- <span class="badge badge-secondary"><a href="{{url('/productos/'.$producto->id.'/edit')}}">Editar</a></span>
+                  @include('productos.borrar',['producto' => $producto]) --}}
+                  {{-- @endif --}}
+              @endcan
                   {{-- @endif --}}
               @endforeach
-           
+
             </div>
           </div>
 

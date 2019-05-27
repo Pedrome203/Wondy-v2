@@ -19,6 +19,10 @@ class ProductoPolicy
     {
         //
     }
+    public function mostrar(User $user, Producto $producto)
+    {
+      return $user->id != $producto->user_id;
+    }
     public function update(User $user, Producto $producto)
     {
       return $user->id == $producto->user_id;

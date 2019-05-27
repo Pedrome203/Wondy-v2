@@ -27,8 +27,6 @@ class ComprasController extends Controller
   public function index()
   {
     //buscamos el id de nuestro usuario conectado
-    // $userId = \Auth::id();
-    // $user = User::find($userId);
     $user = \Auth::user();
     $productos = $user->productosComprados();
     return view('compras.index', compact('productos'));
@@ -36,18 +34,13 @@ class ComprasController extends Controller
 
   public function ventas(){
     //buscamos el id de nuestro usuario conectado
-
     $userId = \Auth::id();
 
     $users = User::with(['productos' => function ($query) {
       $query->where('num_ventas', '>', 0);
     }])->find($userId);
     $productos = $users->productos;
-    // dd($users->productos);
-    //querying-relationship-existence
-    // $productos = Producto::where('num_ventas', '>', 0)
-    //             ->where('user_id', $userId)
-    //             ->get();
+
     return view('compras.ventas', compact('productos'));
   }
   /**
@@ -122,7 +115,6 @@ class ComprasController extends Controller
       $carritoId = $carrito->id;
       //se elimina
       CarritoProducto::find($pivote_id)->delete();
-      // $carrito->crearPorSessionId($producto_id);
       $carrito->quitarProducto($productoId);
       Session::put('carrito', $carrito);
     }

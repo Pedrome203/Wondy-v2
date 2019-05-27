@@ -78,9 +78,10 @@ class ProductosController extends Controller
       // dd($request->file('image'));
       $request->validate([
             'nombre' => 'required|max:40',
+            'precio' => 'required|numeric|min:1|max:10000',
             'tipo' => 'required|min:1|max:10',
-            'precio' => 'required|min:1|max:10000',
-            'talla' => 'required|min:1|max:100',
+            'talla' => 'required',
+            'sexo' => 'required',
             'image' => 'required|image',
         ]);
 
@@ -120,13 +121,12 @@ class ProductosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
+     public function edit($id)
+     {
 
-         $producto = Producto::find($id);
-
-        return view("productos.editar", ["producto" => $producto]);
-    }
+       $producto = Producto::find($id);
+       return view("productos.editar", ["producto" => $producto]);
+     }
 
     /**
      * Update the specified resource in storage.
@@ -137,6 +137,14 @@ class ProductosController extends Controller
      */
     public function update(Request $request, $id)
     {
+      $request->validate([
+        'nombre' => 'required|max:40',
+        'precio' => 'required|numeric|min:1|max:10000',
+        'tipo' => 'required|min:1|max:10',
+        'talla' => 'required',
+        'sexo' => 'required',
+        'image' => 'required|image',
+      ]);
         $producto = Producto::find($id);
         $producto->nombre = $request->nombre;
         $producto->imagen = "miImagen";

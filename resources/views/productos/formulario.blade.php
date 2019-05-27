@@ -9,9 +9,9 @@
 <label for="tipo">Tipo de diseño</label>
  <select class="tipo" name="tipo">
  	@if ($producto->tipo != '')
- 	  <option value="{{$producto->tipo}}">Elige una opción</option>
+ 	  <option value="{{$producto->tipo}}" hidden>Elige una opción</option>
     @else
-     <option value="0">Elige una opción</option>
+     <option value="0" hidden >Elige una opción</option>
     @endif
      <option value="1">Manga Larga</option>
       <option value="2">Manga corta</option>
@@ -22,30 +22,30 @@
 <label for="tipo">Talla</label>
  <select class="talla" name="talla">
   @if ($producto->talla != '')
-    <option value="{{$producto->talla}}">Elige una opción</option>
+    <option value="{{$producto->talla}}" hidden>Elige una opción</option>
     @else
-     <option value="0">Elige una opción</option>
+     <option value="0" hidden>Elige una opción</option>
     @endif
-     <option value="c">Chica</option>
+     <option  value="c">Chica</option>
       <option value="m">Mediana</option>
       <option value="g">Grande</option>
       <option value="x">Extra Grande</option>
  </select>
-  
+
 </div>
 
 <div>
 <label for="sexo">Genero</label>
  <select class="sexo" name="sexo">
   @if ($producto->tipo != '')
-    <option value="{{$producto->sexo}}">Elige una opción</option>
+    <option value="{{$producto->sexo}}" hidden>Elige una opción</option>
     @else
-     <option value="0">Elige una opción</option>
+     <option value="" hidden>Elige una opción</option>
     @endif
      <option value="1">Hombre</option>
       <option value="2">Mujer</option>
  </select>
-  
+
 </div>
 
   <div class="form-group">
