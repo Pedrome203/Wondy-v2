@@ -41,7 +41,8 @@ class ProductosController extends Controller
               }
       if($request->ordenamiento == "4"){
                   $productos = Producto::order('precio', 'desc')->paginate(10);
-              }
+      }       
+       }
      else{
            $productos = Producto::paginate(10);
       }
