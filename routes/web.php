@@ -16,8 +16,8 @@ Route::get('/register/verify/{code}', 'Auth\RegisterController@verify');
 Route::get('/',  'MainController@home');
 
 Route::resource('productos', 'ProductosController');
-Route::resource('compras', 'ComprasController');
-Route::get('ventas','ComprasController@ventas')->name('ventas.index');
+Route::resource('compras', 'ComprasController', ['except' => ['show', 'edit', 'update']])->middleware('auth');;
+Route::get('ventas','ComprasController@ventas')->name('ventas.index')->middleware('auth');;
 
 
 //carrito

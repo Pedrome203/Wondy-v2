@@ -17,6 +17,7 @@ class ProductoPolicy
      */
     public function __construct()
     {
+
     }
     public function mostrar(User $user, Producto $producto)
     {

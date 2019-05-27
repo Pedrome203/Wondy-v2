@@ -11,10 +11,10 @@
     <h2 style="color:red;">Datos de la entrega</h2>
     <p>Nombre: {{$user->name}}</p>
     <p>Correo: {{$user->email}}</p>
-    <p>Direccion:<span>{{$user->address}}fdsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span></p>
+    <p>Direccion:<span>{{$user->address}}</span></p>
     <p>Celular: {{$user->phone}}</p>
   </div>
-  
+
   {{-- **mostrar productos que va a comprar --}}
   <div class="comprar-productos ">
     @foreach ($productos as $producto)

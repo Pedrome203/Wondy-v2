@@ -29,6 +29,8 @@ class ComprasController extends Controller
     //buscamos el id de nuestro usuario conectado
     $user = \Auth::user();
     $productos = $user->productosComprados();
+
+    // dd($productos);
     return view('compras.index', compact('productos'));
   }
 
@@ -171,6 +173,7 @@ class ComprasController extends Controller
   */
   public function destroy(Compra $compra)
   {
+    
     $compra->delete();
     return redirect()->route('compras.index');
   }

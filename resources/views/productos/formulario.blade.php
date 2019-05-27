@@ -13,10 +13,10 @@
     @else
      <option value="0" hidden >Elige una opción</option>
     @endif
-     <option value="1">Manga Larga</option>
-      <option value="2">Manga corta</option>
-      <option value="3">Manga normal</option>
-      <option value="4">Sueter</option>
+     <option {{$producto->tipo == 'Manga Larga' ? 'selected' : ''}} value="1">Manga Larga</option>
+      <option {{$producto->tipo == 'Manga corta' ? 'selected' : ''}} value="2">Manga corta</option>
+      <option {{$producto->tipo == 'Manga normal'? 'selected' : ''}} value="3">Manga normal</option>
+      <option {{$producto->tipo == 'sueter' ? 'selected' : ''}} value="4">Sueter</option>
  </select>
 <div>
 <label for="tipo">Talla</label>
@@ -26,10 +26,10 @@
     @else
      <option value="0" hidden>Elige una opción</option>
     @endif
-     <option  value="c">Chica</option>
-      <option value="m">Mediana</option>
-      <option value="g">Grande</option>
-      <option value="x">Extra Grande</option>
+     <option {{$producto->talla == 'c' ? 'selected' : ''}} value="c">Chica</option>
+      <option {{$producto->talla == 'm' ? 'selected' : ''}} value="m">Mediana</option>
+      <option {{$producto->talla == 'g' ? 'selected' : ''}} value="g">Grande</option>
+      <option {{$producto->talla == 'x' ? 'selected' : ''}} value="x">Extra Grande</option>
  </select>
 
 </div>
@@ -42,8 +42,8 @@
     @else
      <option value="" hidden>Elige una opción</option>
     @endif
-     <option value="1">Hombre</option>
-      <option value="2">Mujer</option>
+     <option {{$producto->sexo == 'Hombre' ? 'selected' : ''}} value="1">Hombre</option>
+      <option {{$producto->sexo == 'Mujer' ? 'selected' : ''}} value="2">Mujer</option>
  </select>
 
 </div>
@@ -52,6 +52,9 @@
 
     {{-- <input class="form-control" type="file" name="image" value="{{($producto->imagen)}}"> --}}
     {{-- <label for="exampleFormControlFile1">Example file input</label> --}}
+    @if($producto != null && $producto != '' && $producto->imagen != '')
+    <p>La imagen ya esta cargada, si desea agregar una nueva seleccionela abajo</p>
+  @endif
     {!! Form::file('image', null) !!}
     {{-- <input name="img" type="file" class="form-control-file" id="exampleFormControlFile1"> --}}
   </div>
