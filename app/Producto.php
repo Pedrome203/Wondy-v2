@@ -48,4 +48,8 @@ class Producto extends Model
 
         
     }
+
+    public function scopeOrder($query, $metodo, $orden){
+    	return $query->orderBy($metodo, $orden);
+    }
 }

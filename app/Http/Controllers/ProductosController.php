@@ -24,16 +24,16 @@ class ProductosController extends Controller
       if(!empty($request->tipo) || !empty($request->ordenamiento)){
 
       if($request->ordenamiento == "1"){
-                  $productos =  Producto::orderBy('created_at', 'desc')->paginate(10)->get();
+                  $productos =  Producto::order('created_at', 'desc')->paginate(10);
               }
       if($request->ordenamiento == "2"){
-                  $productos = Producto::orderBy('num_ventas', 'desc')->paginate(10)->get();
+                  $productos = Producto::order('num_ventas', 'desc')->paginate(10);
               }
       if($request->ordenamiento == "3"){
-                  $productos = Producto::orderBy('precio', 'asc')->paginate(10)->get();
+                  $productos = Producto::order('precio', 'asc')->paginate(10);
               }
       if($request->ordenamiento == "4"){
-                  $productos = Producto::orderBy('precio', 'desc')->paginate(10)->get();
+                  $productos = Producto::order('precio', 'desc')->paginate(10);
               }
 
       if($request->Min != '' && $request->Max != '' ){
