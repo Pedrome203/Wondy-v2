@@ -163,7 +163,7 @@ class ProductosController extends Controller
 //eager load
     public function perfil(){
       $userId = \Auth::id();
-      $user = User::with('productos')->find(1);
+      $user = User::with('productos')->find($userId);
       return view('perfil.index',compact('user'));
     }
 }

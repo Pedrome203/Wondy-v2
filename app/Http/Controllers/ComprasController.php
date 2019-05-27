@@ -33,11 +33,18 @@ class ComprasController extends Controller
 
   public function ventas(){
     //buscamos el id de nuestro usuario conectado
+
     $userId = \Auth::id();
+
+    $users = User::with(['productos' => function ($query) {
+      $query->where('num_ventas', '>', 0);
+    }])->find($userId);
+    $productos = $users->productos;
+    // dd($users->productos);
     //querying-relationship-existence
-    $productos = Producto::where('num_ventas', '>', 0)
-                ->where('user_id', $userId)
-                ->get();
+    // $productos = Producto::where('num_ventas', '>', 0)
+    //             ->where('user_id', $userId)
+    //             ->get();
     return view('compras.ventas', compact('productos'));
   }
   /**
