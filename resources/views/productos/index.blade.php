@@ -39,13 +39,15 @@
 
           </div>
             <div class="productos">
+          
               @foreach ($productos as $producto)
+                {{-- @if($producto->user_id != Auth::user()->id) --}}
                 <div class="producto">
                   <a href="{{url('/productos',$producto->id)}}">
                     <img class="img-1" src="{{Storage::url($producto->imagen)}}" alt="">
                     <div class="playera-nombre">
                       {{-- <a href="{{url('/productos/'.$producto->id)}}">  --}}
-                      <p>{{$producto->nombre}}</p>
+                      <p>{{$producto->user_id}}</p>
                       {{-- </a> --}}
                     </div>
                   </a>
@@ -53,7 +55,7 @@
                     {{-- <p>Tipo: {{$producto->tipo}}</p> --}}
                   </div>
                   <dir>
-                    <p>{{$producto->sexo}}</p>
+                    <p>{{Auth::user()->id}}</p>
                   </dir>
                   <div class="precio-estrellas">
                     <p>${{$producto->precio}}</p>
@@ -68,16 +70,11 @@
                         <img class="add-cart-img" src="{{URL::asset('/images/add.png')}}">
                       </button>
                   </form>
-
-                @can('delete', $producto)
-                  {{-- @if(Auth::check() && $producto->user_id == Auth::user()->id) --}}
-                  <span class="badge badge-secondary"><a href="{{url('/productos/'.$producto->id.'/edit')}}">Editar</a></span>
-                  @include('productos.borrar',['producto' => $producto])
-                  {{-- @endif --}}
-              @endcan
+           
                 </div>
+                  {{-- @endif --}}
               @endforeach
-
+           
             </div>
           </div>
 
