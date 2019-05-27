@@ -12,18 +12,6 @@
         <form action="{{ route('productos.index') }}" method="PUTCHAR">
           @csrf
         </div>
-        <div class="precio-filtro">
-
-          <label for="text">Precio:</label>
-          <br>
-          <span class="inside-input">$</span>
-          <input id="min" type="number" name="Min" placeholder="Min">
-          <span class="inside-input">$</span>
-          <input id="max" type="number" name="Max" placeholder="Max">
-          <input type="submit" class="btn btn-success" value="Ir">
-        </div>
-
-      </div>
       <div>
         <div class="filtro-container">
           <label for="text">Ordenar por:</label>
