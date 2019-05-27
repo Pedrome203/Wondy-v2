@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\CompraMail;
 use Carbon\Carbon;
 use App\Compra;
 use App\Producto;
@@ -12,6 +13,8 @@ use App\User;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
+
 use Session;
 
 class ComprasController extends Controller
@@ -71,7 +74,6 @@ class ComprasController extends Controller
         $precio += $producto->precio;
       }
     }
-
     return view('compras.comprar', compact('user','productos','total'));
   }
 
@@ -84,9 +86,12 @@ class ComprasController extends Controller
   public function store(Request $request)
   {
     //guardar compra
+    $total = 0;
+    $user = \Auth::user();
     $userId = \Auth::id();
     $productos = $request->productos;
     $productos = json_decode($productos);
+
     foreach($productos as $producto) {
       //modificar producto
       $prod = Producto::find($producto->pivot->producto_id);
@@ -99,9 +104,11 @@ class ComprasController extends Controller
       'fecha_compra' =>  \Carbon\Carbon::now(),
       'status' => 'pendiente',
       ]);
-
+      $total += $prod->precio * $producto->pivot->cantidad;
       $this->deleteFromCart($producto->pivot->id,$producto->pivot->producto_id);
     }
+    //mandar Correo
+    Mail::to($user->email)->send(new CompraMail($user, $productos, $total));
     return redirect('compras/');
 
   }
