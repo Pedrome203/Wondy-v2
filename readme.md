@@ -43,12 +43,14 @@ Una vez que tenemos los servicios y programas antes mencionados nuestro proyecto
 
 Ya que tienes tu proyecto descargado tienes que copiar el archivo .env.example y renombrarlo como “ .env ” dentro de este archivo modificaras las configuraciones de tu BD, para configurarlo pones el nombre de usuario con el que tienes permisos, tambien pones el password, recuerda poner tambien el nombre de la base de datos.  
 
+
 Despues abre una consola, vas al lugar donde se descargó el proyecto y haces el comando:  
 “  composer install "  
 para descargar todas las dependencias de tu proyecto, tambien el comando:  
 artisan key:generate  
-para generar una llave.  
-
+para generar una llave. 
+para tener archivos  
+php artisan storage:link  
 Por ultimo con se usa el siguiente comando para poblar la base de datos  
 php artisan db:seed   
 Una vez que hicimos esto nuestro proyecto esta listo para usarse completamente localmente.   
