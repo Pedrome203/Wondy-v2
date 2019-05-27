@@ -1,5 +1,6 @@
 @extends('layouts.header')
 
+@extends('partials.mensajes')
 @section('content')
 
       <div class="container-productos">
@@ -41,7 +42,7 @@
               @foreach ($productos as $producto)
                 <div class="producto">
                   <a href="{{url('/productos',$producto->id)}}">
-                    <img class="img-1" src="{{Storage::url($producto->imagen)}}" alt="Playera con diseño">
+                    <img class="img-1" src="{{Storage::url($producto->imagen)}}" alt="">
                     <div class="playera-nombre">
                       {{-- <a href="{{url('/productos/'.$producto->id)}}">  --}}
                       <p>{{$producto->nombre}}</p>

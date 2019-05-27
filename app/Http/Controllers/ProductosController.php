@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\Auth;
 class ProductosController extends Controller
 {
 
+  public function __construct()
+    {
+        $this->middleware('auth')->except('productos.index');
+        $this->middleware('perfil')->only('perfil');
+    }
 
     /**
      * Display a listing of the resource.
@@ -163,7 +168,7 @@ class ProductosController extends Controller
 //eager load
     public function perfil(){
       $userId = \Auth::id();
-      $user = User::with('productos')->find(1);
+      $user = User::with('productos')->find($userId);
       return view('perfil.index',compact('user'));
     }
 }
