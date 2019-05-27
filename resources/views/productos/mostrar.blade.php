@@ -14,21 +14,25 @@
       </div>
     </div>
     <form class="especificaciones" action="index.html" method="post">
-        <p>$190</p>
-        <p>By Crackbron</p>
-        <p>110 comentarios</p>
-        <p>Color</p>
-        <p>Talla</p>
+      <p>$190</p>
+      <p>By Crackbron</p>
+      <p>110 comentarios</p>
+      <p>Color</p>
+      <p>Talla</p>
+      @can('delete', $producto)
+        <span class="badge badge-secondary"><a href="{{url('/productos/'.$producto->id.'/edit')}}">Editar</a></span>
+        @include('productos.borrar',['producto' => $producto])
+      @endcan
     </form>
   </div>
   <div class="comentarios">
     <div class="comentario">
       <a href="#">
         {{-- <div class=""> --}}
-          <img class="foto-perfil-comentario" src="{{URL::asset('/images/playera.jpg')}}" alt="img">
+        <img class="foto-perfil-comentario" src="{{URL::asset('/images/playera.jpg')}}" alt="img">
         {{-- </div> --}}
         {{-- <div class="perfil-comentario"> --}}
-          <span class="nombre-perfil-comentario"> Crackbron</span>
+        <span class="nombre-perfil-comentario"> Crackbron</span>
         {{-- </div> --}}
       </a>
       <img class="calificacion-comentario" src="{{URL::asset('/images/playera.jpg')}}" alt="calificacion">
