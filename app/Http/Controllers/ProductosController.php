@@ -181,7 +181,7 @@ class ProductosController extends Controller
         $producto->talla = $request->talla;
         $producto->num_ventas = 0;
         $producto->calificacion = 0;
-
+        $request->file('image')->store('public')
         if($producto->save()){
            return redirect("/productos");
         }else{
