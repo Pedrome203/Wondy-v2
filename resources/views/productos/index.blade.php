@@ -40,17 +40,15 @@
               <a href="{{url('/productos',$producto->id)}}">
                 <img class="img-1" src="{{Storage::url($producto->imagen)}}" alt="">
                 <div class="playera-nombre">
-                  <p>{{$producto->user_id}}</p>
+                  <p>{{$producto->nombre}}</p>
                 </div>
               </a>
               <div>
               </div>
-              <dir>
-                <p>{{Auth::user()->id}}</p>
-              </dir>
+
               <div class="precio-estrellas">
                 <p>${{$producto->precio}}</p>
-                <p>Tipo: {{$producto->tipo}}</p>
+                <p> {{$producto->sexo}}</p>
               </div>
               <form class="" action="{{ route('carrito.agregar') }}" method="POST">
                 @csrf

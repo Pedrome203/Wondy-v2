@@ -30,7 +30,7 @@
         </div> --}}
         <div class="precio-filtro">
           <form class="" action="index.html" method="post" id="precio">
-            <label for="">Precio:</label>
+            <label for="">Precio: </label>
             <br>
             <span class="inside-input">$</span>
             <input id="min" type="text" name="Min" placeholder="Min">
@@ -55,9 +55,9 @@
               <div>
               </div>
               <dir>
-                <p>{{$producto->sexo}}</p>
               </dir>
               <div class="precio-estrellas">
+                <p>{{$producto->sexo}}</p>
                 <p>${{$producto->precio}}</p>
               </div>
               <form class="" action="{{ route('carrito.agregar') }}" method="POST">

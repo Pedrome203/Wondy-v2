@@ -5,41 +5,33 @@
   <div class="producto-grid">
     <div class="producto-ver">
       <div class="producto-vistas">
-        @for ($i=0; $i < 4; $i++)
-          <img class="img-vista"src="{{URL::asset('/images/playera.jpg')}}" alt="Playera con diseño">
-        @endfor
-      </div>
-      <div class="wrapper-producto">
-        <img class="img-2"src="{{URL::asset('/images/playera.jpg')}}" alt="Playera con diseño">
-      </div>
+        {{-- @for ($i=0; $i < 4; $i++)
+        <img class="img-vista"src="{{URL::asset('/images/playera.jpg')}}" alt="Playera con diseño">
+      @endfor --}}
     </div>
-    <form class="especificaciones" action="index.html" method="post">
-      <p>$190</p>
-      <p>By Crackbron</p>
-      <p>110 comentarios</p>
-      <p>Color</p>
-      <p>Talla</p>
-      @can('delete', $producto)
-        <span class="badge badge-secondary"><a href="{{url('/productos/'.$producto->id.'/edit')}}">Editar</a></span>
-        @include('productos.borrar',['producto' => $producto])
+    <div class="wrapper-producto">
+      <img class="img-2"src="{{Storage::url($producto->imagen)}}" alt="Playera con diseño">
+    </div>
+  </div>
+  <form class="especificaciones" action="index.html" method="post">
+    <p>Precio: ${{$producto->precio}}</p>
+    <p>Talla: {{$producto->talla}}</p>
+    <p>Tipo:  {{$producto->tipo}}</p>
+    <p>Sexo:  {{$producto->sexo == 1 ? 'mujer': 'hombre'}}</p>
+    @can('mostrar', $producto)
+      <form class="" action="{{ route('carrito.agregar') }}" method="POST">
+        @csrf
+        <input id="productoId" name="productoId" type="hidden" value="{{$producto->id}}">
+        <button class="add-cart-btn" style="width:50%" type="submit" name="button">
+          <span>Add to cart<span>
+            <img class="add-cart-img" src="{{URL::asset('/images/add.png')}}">
+          </button>
+        </form>
       @endcan
     </form>
-  </div>
-  <div class="comentarios">
-    <div class="comentario">
-      <a href="#">
-        {{-- <div class=""> --}}
-        <img class="foto-perfil-comentario" src="{{URL::asset('/images/playera.jpg')}}" alt="img">
-        {{-- </div> --}}
-        {{-- <div class="perfil-comentario"> --}}
-        <span class="nombre-perfil-comentario"> Crackbron</span>
-        {{-- </div> --}}
-      </a>
-      <img class="calificacion-comentario" src="{{URL::asset('/images/playera.jpg')}}" alt="calificacion">
-      <div class="body-comentario">
-        <h3 class="fecha-comentario">10/10/1247</h3>
-        <h4 class="texto-comentario">Me gusta mucho ir a comprar ropa ahi</h4>
-      </div>
-    </div>
+    @can('delete', $producto)
+      <span class="button badge-secondary"><a href="{{url('/productos/'.$producto->id.'/edit')}}">Editar</a></span>
+      @include('productos.borrar',['producto' => $producto])
+    @endcan
   </div>
 @endsection
