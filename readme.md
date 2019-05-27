@@ -1,76 +1,58 @@
-## Brandon Manuel Diaz Flores
-## Pedrito Morales Enríquez
+## Brandon Manuel Diaz Flores.
 
+## Pedro Morales Enriquez.
 
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+# Wondy
+Wondy es una plataforma para vender ropa, los usuarios podran crear un perfil con sus prendas y ponerlas en venta.
+Tambien podran subir sus diseños o crearlos en la pagina y por un cierto precio podran comprar esos diseños.
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+## Herramientas
 
-## About Laravel
+Usaremos las  siguientes herramientas
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+#### Laragon
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Laragon es una opción relativamente nueva para la creación de lo que llamamos el entorno de desarrollo, es decir, todo un conjunto de programas necesarios para desarrollar aplicaciones. Sirve para trabajar con PHP, pero también con otros lenguajes del lado del servidor, como Node, Python o Ruby. 
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+#### Composer
 
-## Learning Laravel
+Es un software de gestion de los paquetes del leguanje de programcion PHP, ademas proporciona un formato estandar para la gestion de dependencias y bibliotecas requeridas por el software PHP.
+Composer se utilizo para facilitar el manejo del lenguaje php y sus dependecias.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+#### Sublime text u cualquier otro editor 
+Es un editor de texto con soporte para codificar.
+El motivo por el que se utilizo sublime text es la facilidad que otorga a la hora de programar, ademas de ser muy ligero y rapido.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1400 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Instalacion
 
-## Laravel Sponsors
+Nuestro proyecto usa Laravel (framework de PHP); para poderlo usar necesitaremos instalar PHP, composer, XAMPP y laragon. 
+Al instalar la version mas actual de XAMPP se descarga automaticamente php 7.* por lo tanto matamos dos pajaros de un tiro.
+Para instalar XAMPP en windows y linux simplemente se entra a la pagina y se descarga el ejecutable.
+Para instalar composer se teclearan una serie de comandos en la consola. Para esto seguiremos las intrucciones de su pagina web. https://getcomposer.org/download/ 
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+Lo mismo haremos con laragon, aqui esta su pagina web 
+https://laragon.org/
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
+El siguiente paso seria crear una base de datos en mysql 
+  
+Una vez que se tiene la base de datos, se descarga el proyecto de github: https://github.com/BrandonMDiaz/Wondy.git
 
-## Contributing
+Una vez que tenemos los servicios y programas antes mencionados nuestro proyecto ya está descargado.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Configuración
 
-## Security Vulnerabilities
+Ya que tienes tu proyecto descargado tienes que copiar el archivo .env.example y renombrarlo como “ .env ” dentro de este archivo modificaras las configuraciones de tu BD, para configurarlo pones el nombre de usuario con el que tienes permisos, tambien pones el password, recuerda poner tambien el nombre de la base de datos.  
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Despues abre una consola, vas al lugar donde se descargó el proyecto y haces el comando:  
+“  composer install "  
+para descargar todas las dependencias de tu proyecto, tambien el comando:  
+artisan key:generate  
+para generar una llave.  
 
-## License
+Por ultimo con se usa el siguiente comando para poblar la base de datos  
+php artisan db:seed   
+Una vez que hicimos esto nuestro proyecto esta listo para usarse completamente localmente.   
 
-The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Brandon Manuel Diaz Flores.
+
+Pedro Morales Enriquez.
