@@ -42,16 +42,12 @@
       </div>
 
       <div>
-        <div class="ajustes-d">
-          <a href="#">
-            <img class="ajustes"src="{{URL::asset('/images/ajustes.png')}}" alt="ajustes">
-          </a>
-        </div>
+
         <div class="productos">
           @foreach ($user->productos as $producto)
             <div class="producto">
               <a href="{{url('/productos',$producto->id)}}">
-                <img class="img-1" src="{{Storage::url($producto->imagen)}}" alt="Playera con diseño">
+                <img class="img-1" src="{{Storage::url($producto->imagen)}}" alt="">
                 <div class="playera-nombre">
                   <p>{{$producto->nombre}}</p>
                 </div>
