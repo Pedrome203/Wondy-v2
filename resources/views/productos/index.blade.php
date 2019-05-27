@@ -14,7 +14,7 @@
         </div>
         <div class="precio-filtro">
 
-          <label for="">Precio:</label>
+          <label for="text">Precio:</label>
           <br>
           <span class="inside-input">$</span>
           <input id="min" type="number" name="Min" placeholder="Min">

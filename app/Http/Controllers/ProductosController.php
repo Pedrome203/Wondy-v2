@@ -42,16 +42,11 @@ class ProductosController extends Controller
       if($request->ordenamiento == "4"){
                   $productos = Producto::order('precio', 'desc')->paginate(10);
               }
-
-      if($request->Min != '' && $request->Max != '' ){
-           $productos = Producto::whereBetween('precio', [$request->Min, $request->Max])->paginate(10)->get();
-          }
-      }
      else{
            $productos = Producto::paginate(10);
       }
 
-      return view("productos.index", ["productos" => $productos]);
+      return view("productos.index", ["productos" => $productos], ["request" => $request]);
 
     }
 
