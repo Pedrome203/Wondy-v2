@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Producto;
 use App\Carrito;
+use App\User;
+
 use Storage;
 use Illuminate\Support\Facades\Auth;
 
@@ -156,5 +158,12 @@ class ProductosController extends Controller
     {
         Producto::destroy($id);
         return redirect('/productos');
+    }
+
+//eager load
+    public function perfil(){
+      $userId = \Auth::id();
+      $user = User::with('productos')->find(1);
+      return view('perfil.index',compact('user'));
     }
 }

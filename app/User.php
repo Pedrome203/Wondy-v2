@@ -27,10 +27,28 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function productosComprados(){
+      return $this->belongsToMany('App\Producto', 'compras')
+                  ->withPivot('id','cantidad', 'fecha_compra')
+                  ->orderby('fecha_compra','desc')
+                  ->get();
+    }
+
+    public function compras()
+    {
+      return $this->hasMany(Compra::class);
+    }
+
+    public function productos()
+    {
+      return $this->hasMany(Producto::class);
+    }
+
     public function archivos()
-        {
-            return $this->morphMany('App\Archivo', 'modelo');
-        }
+    {
+      return $this->morphMany('App\Archivo', 'modelo');
+    }
     /**
      * The attributes that should be cast to native types.
      *
