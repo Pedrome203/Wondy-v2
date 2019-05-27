@@ -19,10 +19,6 @@ class ProductoPolicy
     {
         //
     }
-    public function mostrar(User $user, Producto $producto)
-    {
-      return $user->id != $producto->user_id;
-    }
     public function update(User $user, Producto $producto)
     {
       return $user->id == $producto->user_id;
@@ -30,6 +26,13 @@ class ProductoPolicy
     public function delete(User $user, Producto $producto)
     {
       return $user->id == $producto->user_id;
+    }
+    public function mostrar(User $user, Producto $producto)
+    {
+      if(\Auth::check()){
+        return $user->id != $producto->user_id;
+      }
+        return true;
     }
 
 }

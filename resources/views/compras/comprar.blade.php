@@ -11,8 +11,8 @@
     <h2>Datos de la entrega</h2>
     <p>Nombre: {{$user->name}}</p>
     <p>Correo: {{$user->email}}</p>
-    <p>Direccion:<span>{{$user->direccion}}</span></p>
-    <p>Celular: {{$user->celular}}</p>
+    <p>Direccion:<span>{{$user->address}}</span></p>
+    <p>Celular: {{$user->phone}}</p>
   </div>
   {{-- **mostrar productos que va a comprar --}}
   <div class="comprar-productos ">
@@ -25,7 +25,6 @@
           <div class="inf2-1">
             <p>Nombre: {{$producto->nombre}}</p>
             <p>Tipo: {{$producto->tipo}}</p>
-            <p>Calificacion: {{$producto->calificacion}}</p>
           </div>
           <div class="inf-2">
             <p>Precio: {{$producto->precio}}</p>
