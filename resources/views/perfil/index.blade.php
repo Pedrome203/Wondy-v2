@@ -28,17 +28,7 @@
             </li>
           </ul>
         </div> --}}
-        <div class="precio-filtro">
-          <form class="" action="index.html" method="post" id="precio">
-            <label for="">Precio: </label>
-            <br>
-            <span class="inside-input">$</span>
-            <input id="min" type="text" name="Min" placeholder="Min">
-            <span class="inside-input">$</span>
-            <input id="max" type="text" name="Max" placeholder="Max">
-          </form>
-          <button id="submit-precio" type="submit" form="precio" value="Submit">Ir</button>
-        </div>
+
       </div>
 
       <div>
