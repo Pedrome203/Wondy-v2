@@ -47,10 +47,10 @@ class Producto extends Model
 
    public function getSexoAttribute($sexo)
     {
-    	if($sexo == 1){
+    	if($sexo == 2){
 			return "Mujer";
     	}
-    	else if($sexo == 2){
+    	else if($sexo == 1){
     		return "Hombre";
     	}
     }

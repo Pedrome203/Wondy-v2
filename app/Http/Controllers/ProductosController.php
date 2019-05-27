@@ -29,7 +29,6 @@ class ProductosController extends Controller
       if(\Auth::check()){
         $userId = \Auth::id();
         if(!empty($request->tipo) || !empty($request->ordenamiento)){
-
           if($request->ordenamiento == "1"){
             $productos =  Producto::where('user_id', '!=' ,  $userId)
             ->order('created_at', 'desc')->paginate(10);
@@ -82,7 +81,6 @@ class ProductosController extends Controller
         }
       }
       return view("productos.index", ["productos" => $productos]);
-
     }
 
 
