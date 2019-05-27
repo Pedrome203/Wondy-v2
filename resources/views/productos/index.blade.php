@@ -68,11 +68,12 @@
                       </button>
                   </form>
 
-                  @if(Auth::check() && $producto->user_id == Auth::user()->id)
+                @can('delete', $producto)
+                  {{-- @if(Auth::check() && $producto->user_id == Auth::user()->id) --}}
                   <span class="badge badge-secondary"><a href="{{url('/productos/'.$producto->id.'/edit')}}">Editar</a></span>
                   @include('productos.borrar',['producto' => $producto])
-                @endif
-
+                  {{-- @endif --}}
+              @endcan
                 </div>
               @endforeach
 

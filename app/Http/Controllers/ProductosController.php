@@ -76,7 +76,7 @@ class ProductosController extends Controller
             'tipo' => 'required|min:1|max:10',
             'precio' => 'required|min:1|max:10000',
             'talla' => 'required|min:1|max:100',
-            'imagen' => 'required|image',
+            'image' => 'required|image',
         ]);
 
         $producto = new Producto;
