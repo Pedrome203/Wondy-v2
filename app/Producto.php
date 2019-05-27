@@ -31,7 +31,7 @@ class Producto extends Model
     else if($tipo == 3){
       return "Manga normal";
     }
-    else if($tipo == 3){
+    else if($tipo == 4){
       return "Sueter";
     }
   }
@@ -44,4 +44,14 @@ class Producto extends Model
   {
     return $this->belongsTo(User::class);
   }
+
+   public function getSexoAttribute($sexo)
+    {
+    	if($sexo == 1){
+			return "Mujer";
+    	}
+    	else if($sexo == 2){
+    		return "Hombre";
+    	}
+    }
 }
