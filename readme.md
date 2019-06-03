@@ -1,6 +1,3 @@
-## Brandon Manuel Diaz Flores.
-
-## Pedro Morales Enriquez.
 
 # Wondy
 Wondy es una plataforma para vender ropa, los usuarios podran crear un perfil con sus prendas y ponerlas en venta.
@@ -55,6 +52,3 @@ Por ultimo con se usa el siguiente comando para poblar la base de datos
 php artisan db:seed   
 Una vez que hicimos esto nuestro proyecto esta listo para usarse completamente localmente.   
 
-Brandon Manuel Diaz Flores.
-
-Pedro Morales Enriquez.
